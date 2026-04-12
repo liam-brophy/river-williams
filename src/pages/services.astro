@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const services = [
+  {
+    title: 'Individual Therapy',
+    description: 'One-on-one sessions drawing on EMDR, somatic experiencing, DBT, and psychodynamic approaches — tailored to your history, your nervous system, and your goals.',
+    modalities: 'EMDR · Somatic Experiencing · DBT · Psychodynamic',
+    duration: '60 minutes',
+    rate: '$70 – $150',
+  },
+  {
+    title: 'Group Therapy',
+    description: 'Small-group therapeutic work offering peer connection alongside clinical support. Group formats vary — reach out to ask about current offerings.',
+    modalities: 'Format varies by group',
+    duration: '60 minutes',
+    rate: '$90 – $200',
+  },
+  {
+    title: 'Spiritual Care & Counseling',
+    description: 'For clients navigating questions of meaning, faith, religious trauma, or spiritual transition alongside psychological healing.',
+    modalities: 'Integrative · Spiritually-informed',
+    duration: '60 minutes',
+    rate: 'Sliding scale — see below',
+  },
+];
+---
+
+<Layout
+  title="Services & Rates"
+  description="Individual therapy, group therapy, and spiritual care on a sliding scale. River uses the Green Bottle Pay Scale."
+>
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16">
+    <header class="mb-10">
+      <p class="font-sans text-muted text-sm tracking-widest uppercase mb-3">What's offered</p>
+      <h1 class="font-serif text-forest text-4xl md:text-5xl font-medium mb-5">Services &amp; Rates</h1>
+      <p class="font-sans text-slate text-base leading-relaxed max-w-2xl">
+        River offers individual and group therapy on a sliding scale, using the Green Bottle Pay Scale.
+      </p>
+    </header>
+
+    <!-- Green Bottle Pay Scale callout -->
+    <!-- PLACEHOLDER: Update with any additional context River wants to provide about the sliding scale — who it's for, how clients should think about choosing their rate -->
+    <div class="bg-sand border-l-4 border-terracotta rounded-r-2xl p-7 mb-14 max-w-3xl">
+      <h2 class="font-serif text-forest text-xl font-medium mb-3">The Green Bottle Pay Scale</h2>
+      <p class="font-sans text-slate text-sm leading-relaxed">
+        River uses the Green Bottle Pay Scale, a community-accountable sliding scale model.
+        Clients are invited to self-select a rate that reflects their access to financial
+        resources. No documentation required. The goal is for cost to be a smaller barrier
+        to care — for everyone.
+      </p>
+    </div>
+
+    <!-- Service cards -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {services.map(service => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          modalities={service.modalities}
+          duration={service.duration}
+          rate={service.rate}
+        />
+      ))}
+    </div>
+
+    <!-- Insurance / payment note -->
+    <!-- PLACEHOLDER: Update with River's actual insurance/payment acceptance policy -->
+    <div class="max-w-2xl text-sm font-sans text-slate leading-relaxed space-y-2">
+      <p><strong class="font-medium text-forest">Insurance:</strong> [Placeholder — update with whether River accepts insurance, is out-of-network only, or can provide superbills for reimbursement]</p>
+      <p><strong class="font-medium text-forest">Payment:</strong> [Placeholder — accepted payment methods]</p>
+      <p><strong class="font-medium text-forest">Cancellation:</strong> [Placeholder — cancellation policy]</p>
+    </div>
+  </div>
+
+  <CTABlock
+    heading="Ready to get started?"
+    body="Reach out with questions, or use the booking portal to schedule a consultation."
+    primaryLabel="Get in touch"
+    primaryHref="/contact"
+  />
+</Layout>

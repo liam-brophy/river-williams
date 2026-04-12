@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F5F0E8;
+  --color-forest: #2D4A3E;
+  --color-slate: #4A5568;
+  --color-terracotta: #C4845A;
+  --color-sand: #E8D5B7;
+  --color-muted: #8A9B8E;
+
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-cream);
+    color: var(--color-slate);
+    font-family: var(--font-sans);
+    font-size: 17px;
+  }
+
+  body {
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif);
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-forest);
+    color: var(--color-forest);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border-radius: 9999px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-forest);
+    color: var(--color-cream);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-terracotta);
+    color: var(--color-terracotta);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border-radius: 9999px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-terracotta);
+    color: var(--color-cream);
+  }
+
+  .section-divider {
+    width: 4rem;
+    height: 1px;
+    background-color: var(--color-terracotta);
+    margin: 3rem auto;
+  }
+}

@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTABlock from '../components/CTABlock.astro';
+---
+
+<Layout
+  title="About River"
+  description="Learn about River Williams — licensed psychotherapist specializing in somatic therapy, EMDR, and trauma-informed care."
+>
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16">
+    <header class="mb-14">
+      <p class="font-sans text-muted text-sm tracking-widest uppercase mb-3">About</p>
+      <h1 class="font-serif text-forest text-4xl md:text-5xl font-medium">About River</h1>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-12">
+
+      <!-- Main bio -->
+      <div class="md:col-span-2 space-y-7 font-sans text-slate text-base leading-[1.85]">
+        <!-- PLACEHOLDER: Replace with River's actual bio — paragraph 1 should cover background and clinical training (degree, licensure, years of experience, geographic context) -->
+        <p>
+          River Williams is a licensed psychotherapist with a background in somatic psychology
+          and a deep commitment to trauma-informed, relational care. After completing graduate
+          training in [Program / University], River has spent [X] years working with individuals
+          navigating the aftermath of trauma, the complexity of anxiety, and the often-disorienting
+          territory of major life change.
+        </p>
+
+        <!-- PLACEHOLDER: Replace with River's actual therapeutic philosophy paragraph — how they work, what they believe about healing, what clients can expect from the relational dynamic -->
+        <p>
+          River's approach is integrative and body-centered. Rather than treating symptoms in
+          isolation, the work attends to the whole person — the stories we carry, the ways our
+          nervous systems have learned to protect us, and the slower, quieter process of building
+          new patterns of safety and connection. Sessions are collaborative and unhurried.
+          You set the pace.
+        </p>
+
+        <!-- PLACEHOLDER: Replace with a personal note from River — something authentic about why this work, what draws them to somatic and trauma work specifically, any relevant personal context they're comfortable sharing -->
+        <p>
+          Drawn to this work through [personal or professional experience River wishes to share],
+          River believes that therapy is most effective when it feels genuinely relational —
+          not a performance of expertise, but a shared act of curiosity. River brings warmth,
+          directness, and a grounded sense of humor to the work.
+        </p>
+      </div>
+
+      <!-- Credentials sidebar -->
+      <aside class="md:col-span-1">
+        <div class="bg-sand rounded-2xl p-7 sticky top-8">
+          <h2 class="font-serif text-forest text-xl font-medium mb-5">Training &amp; Credentials</h2>
+          <ul class="space-y-3 font-sans text-slate text-sm leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="text-terracotta mt-1">&#x2022;</span>
+              <span>Licensed Psychotherapist</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-terracotta mt-1">&#x2022;</span>
+              <span>EMDR Certified</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-terracotta mt-1">&#x2022;</span>
+              <span>Somatic Experiencing training</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-terracotta mt-1">&#x2022;</span>
+              <span>Dialectical Behavior Therapy (DBT)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-terracotta mt-1">&#x2022;</span>
+              <span>Psychodynamic orientation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-terracotta mt-1">&#x2022;</span>
+              <span>Spiritual care and counseling</span>
+            </li>
+          </ul>
+
+          <!-- PLACEHOLDER: Add licensure number and state once confirmed -->
+          <div class="mt-6 pt-6 border-t border-sand">
+            <p class="font-sans text-xs text-muted leading-relaxed">
+              Licensed in [State] · License #[XXXXXX]
+            </p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <CTABlock
+    heading="Want to learn more about working together?"
+    body="Explore River's services and rates, or reach out directly to ask questions and get started."
+    primaryLabel="View services & rates"
+    primaryHref="/services"
+    secondaryLabel="Get in touch"
+    secondaryHref="/contact"
+  />
+</Layout>
