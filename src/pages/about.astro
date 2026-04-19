@@ -5,33 +5,33 @@ import CTABlock from '../components/CTABlock.astro';
 
 <Layout
   title="About River"
-  description="About River Williams, LCSW — licensed psychotherapist in Philadelphia specializing in somatic therapy, EMDR, and trauma-informed care."
+  description="About River Williams, LCSW — licensed psychotherapist in Philadelphia specializing in somatic therapy, EMDR, IFS, and trauma-informed care."
 >
 
-  <!-- Page header with botanical image block -->
+  <!-- Page header with headshot -->
   <div style="border-bottom: 0.5px solid var(--color-mid);">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;" class="about-header">
 
         <!-- Left: page title -->
-        <div style="padding: 4rem 3rem 4rem 0; border-right: 0.5px solid var(--color-mid);">
+        <div style="padding: 4rem 3rem 4rem 0; border-right: 0.5px solid var(--color-mid); display: flex; flex-direction: column; justify-content: flex-end;">
           <p class="section-label" style="margin-bottom: 1rem;">About</p>
           <h1 style="font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.05;">
             About River
           </h1>
           <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); margin-top: 1.5rem; line-height: 1.75; max-width: 38ch;">
-            Philadelphia-based licensed psychotherapist specializing in somatic and EMDR work.
+            Philadelphia-based LCSW specializing in somatic, EMDR, and trauma-focused psychotherapy.
           </p>
         </div>
 
-        <!-- Right: botanical image placeholder -->
-        <!-- PLACEHOLDER: Replace with headshot or botanical image using .botanical-wrapper / .botanical-img -->
-        <!-- Source: Psychology Today profile (psychologytoday.com/profile/1695729) or alternate image River provides -->
-        <div
-          class="botanical-placeholder"
-          data-label="Headshot or botanical image"
-          style="min-height: 320px;"
-        ></div>
+        <!-- Right: headshot — already duotone processed -->
+        <div style="overflow: hidden; max-height: 480px;">
+          <img
+            src="/images/river-headshot.png"
+            alt="River Williams, LCSW"
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+          />
+        </div>
 
       </div>
     </div>
@@ -43,33 +43,29 @@ import CTABlock from '../components/CTABlock.astro';
 
       <!-- Main bio -->
       <div>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.85; color: var(--color-ink);">
+        <div style="display: flex; flex-direction: column; gap: 1.6rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-ink);">
 
-          <!-- PLACEHOLDER: Replace with River's full bio — paragraph 1: background, licensure, years of experience, Philadelphia context -->
           <p>
-            River Williams is a licensed clinical social worker with a background in somatic psychology and a deep commitment to trauma-informed, relational care. After completing graduate training at [Program / University], River has spent [X] years working with individuals navigating the aftermath of trauma, the complexity of anxiety, and the often-disorienting territory of major life change.
+            My work is rooted in somatic trauma specialization, curiosity, and trust in each person's innate wisdom. I emphasize creating internal safety and flexibility rather than pushing for change, allowing healing to unfold at a pace the body and internal world can sustain.
           </p>
 
-          <!-- PLACEHOLDER: Replace with River's therapeutic philosophy — how they work, what they believe about healing, what clients can expect relationally -->
           <p>
-            River's approach is integrative and body-centered. Rather than treating symptoms in isolation, the work attends to the whole person — the stories we carry, the ways our nervous systems have learned to protect us, and the slower, quieter process of building new patterns of safety and connection. Sessions are collaborative and unhurried. You set the pace.
+            I am trained in DBT, Internal Family Systems, Psychodynamics, Attachment-Focused EMDR, Mindfulness-Based Stress Reduction, and Somatic Experiencing. I draw additional grounding from spiritual care and counseling, ancestral connection, and ritual. These modalities support clients in processing trauma, working with protective and wounded parts, and developing greater emotional regulation and resilience. Sessions are collaborative, attuned, and paced with careful attention to consent and the nervous system.
           </p>
 
-          <!-- PLACEHOLDER: Replace with a personal note from River — what draws them to this work, any relevant personal context they want to share, something that conveys relational warmth and specificity -->
           <p>
-            Drawn to this work through [personal or professional experience River wishes to share], River believes that therapy is most effective when it feels genuinely relational — not a performance of expertise, but a shared act of curiosity. River brings warmth, directness, and a grounded sense of humor to the work.
+            For over ten years I have lived, studied, and practiced mindfulness and Buddhist traditions, and am trained as a Kripalu 200-hour Yoga teacher. This embodied foundation informs a steady, compassionate therapeutic presence — supporting clients in reconnecting with their bodies, cultivating internal trust, and creating meaningful, lasting change.
           </p>
 
         </div>
 
-        <!-- Second botanical image placeholder (mid-page) -->
-        <!-- PLACEHOLDER: Optional secondary botanical image — passionflower, honey locust spines, or stream imagery -->
-        <div style="margin-top: 3rem; border-top: 0.5px solid var(--color-mid); padding-top: 2rem;">
-          <div
-            class="botanical-placeholder"
-            data-label="Secondary botanical image"
-            style="height: 220px;"
-          ></div>
+        <!-- Lemon balm botanical — secondary image -->
+        <div style="margin-top: 3.5rem; border-top: 0.5px solid var(--color-mid); padding-top: 2rem; overflow: hidden;">
+          <img
+            src="/images/lemon-balm.avif"
+            alt="Lemon balm"
+            style="width: 100%; max-height: 320px; object-fit: cover; display: block;"
+          />
         </div>
       </div>
 
@@ -82,11 +78,14 @@ import CTABlock from '../components/CTABlock.astro';
             <ul style="display: flex; flex-direction: column; gap: 0.85rem; list-style: none; padding: 0; margin: 0;">
               {[
                 'Licensed Clinical Social Worker (LCSW)',
-                'EMDR Certified',
-                'Somatic Experiencing training',
+                'Attachment-Focused EMDR',
+                'Somatic Experiencing',
+                'Internal Family Systems (IFS)',
                 'Dialectical Behavior Therapy (DBT)',
+                'Mindfulness-Based Stress Reduction',
                 'Psychodynamic orientation',
                 'Spiritual care and counseling',
+                'Kripalu 200-hr Yoga teacher',
               ].map(item => (
                 <li style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--color-ink); line-height: 1.5;">
                   <span style="width: 5px; height: 5px; border-radius: 50%; background: var(--color-mid); flex-shrink: 0;"></span>
@@ -129,9 +128,8 @@ import CTABlock from '../components/CTABlock.astro';
     .about-header > *:first-child {
       border-right: none !important;
       padding-right: 0 !important;
-    }
-    .about-header > *:last-child {
-      min-height: 240px;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid var(--color-mid);
     }
   }
 </style>
