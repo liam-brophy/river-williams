@@ -95,15 +95,15 @@
     background: var(--color-mid);
   }
 
-  /* Duotone botanical image wrapper */
+  /* Duotone botanical image wrapper — screen blend: dark areas → color, bright areas → white */
   .botanical-wrapper {
-    background-color: var(--color-wash);
+    background: linear-gradient(160deg, #3aab7a 0%, #4ab8c8 100%);
     overflow: hidden;
   }
 
   .botanical-img {
-    filter: grayscale(100%) contrast(1.1);
-    mix-blend-mode: multiply;
+    filter: grayscale(100%) brightness(1.15);
+    mix-blend-mode: screen;
     width: 100%;
     display: block;
   }
