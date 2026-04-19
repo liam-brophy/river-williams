@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTABlock from '../components/CTABlock.astro';
+import Flower from '../components/icons/Flower.astro';
 
 const services = [
   {
@@ -26,6 +27,61 @@ const services = [
     rate: 'Sliding scale',
   },
 ];
+
+const tiers = [
+  {
+    id: 'full',
+    range: '$130 – $150',
+    label: 'Full Rate',
+    fill: 1.0,
+    items: [
+      'I am comfortably able to meet all of my basic needs.',
+      'I may have some debt, but it does not prohibit attainment of basic needs.',
+      'I own my home or property, or I rent a higher-end property.',
+      'I own or lease a car.',
+      'I am employed or do not need to work to meet my needs.',
+      'I have regular access to healthcare.',
+      'I have access to financial savings.',
+      'I have expendable income.',
+      'I can always buy new items.',
+      'I can afford an annual vacation or take time off.',
+    ],
+  },
+  {
+    id: 'reduced',
+    range: '$100 – $120',
+    label: 'Reduced Rate',
+    fill: 0.45,
+    items: [
+      'I may stress about meeting my basic needs but still regularly achieve them.',
+      'I may have some debt, but it does not prohibit attainment of basic needs.',
+      'I own or lease a car.',
+      'I am employed.',
+      'I have access to healthcare.',
+      'I might have access to financial savings.',
+      'I have some expendable income.',
+      'I am able to buy some new items and I thrift others.',
+      'I can take a vacation annually or every few years without financial burden.',
+    ],
+  },
+  {
+    id: 'community',
+    range: '$70 – $90',
+    label: 'Community Rate',
+    fill: 0.12,
+    items: [
+      'I frequently stress about meeting my basic needs and don\'t always achieve them.',
+      'I have debt, and it sometimes prohibits attainment of basic needs.',
+      'I rent lower-end properties or have unstable housing.',
+      'I am unemployed or underemployed.',
+      'I qualify for government assistance including food stamps and healthcare.',
+      'I have no access to financial savings.',
+      'I have no or very limited expendable income.',
+      'I rarely buy new items because I am unable to afford them.',
+      'I cannot afford to take a vacation or take time off without financial burden.',
+    ],
+  },
+];
 ---
 
 <Layout
@@ -37,8 +93,11 @@ const services = [
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem;" class="services-header">
       <div>
-        <p class="section-label" style="margin-bottom: 1rem;">What's offered</p>
-        <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; font-style: italic; line-height: 1.1; color: var(--color-ink);">
+        <p class="section-label" style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.45rem;">
+          <Flower size={12} />
+          What's offered
+        </p>
+        <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700; font-style: normal; line-height: 1.1; color: var(--color-ink);">
           Services<br />&amp; Rates
         </h1>
       </div>
@@ -60,118 +119,165 @@ const services = [
           rate={s.rate}
         />
       ))}
-      <!-- Closing rule -->
       <div class="rule"></div>
     </div>
 
   </div>
 
-  <!-- Fee tiers + green bottle -->
+  <!-- Interactive Green Bottle Pay Scale -->
   <section style="background: var(--color-wash); padding: 5rem 0;">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;" class="fees-grid">
-
-        <!-- Left: explanation + tiers -->
-        <div>
-          <p class="section-label" style="margin-bottom: 1.25rem;">Sliding scale — Green Bottle model</p>
-          <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 400; font-style: italic; color: var(--color-ink); margin-bottom: 1.5rem; line-height: 1.2;">
-            Choose the rate<br />that fits your life.
-          </h2>
-          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.8; color: var(--color-ink); margin-bottom: 2.5rem;">
-            The Green Bottle Pay Scale is a community-accountable sliding scale model. You self-select a rate based on your access to financial resources. There is no means-testing or documentation required — your self-assessment is trusted.
-          </p>
-
-          <!-- Three tiers -->
-          <div>
-            {[
-              { range: '$130 – $150', label: 'Full rate', desc: 'You have financial stability, savings, and can meet your needs without worry.' },
-              { range: '$100 – $120', label: 'Reduced rate', desc: 'You manage your expenses but have limited savings or financial cushion.' },
-              { range: '$70 – $90',  label: 'Community rate', desc: 'You experience financial hardship, instability, or are in survival mode.' },
-            ].map(tier => (
-              <div class="fee-tier" style="border-top-color: var(--color-ink);">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem;">
-                  <span style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-ink);">{tier.range}</span>
-                  <span class="section-label">{tier.label}</span>
-                </div>
-                <p style="font-family: var(--font-body); font-size: 0.85rem; color: var(--color-stone); line-height: 1.6;">{tier.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Right: green bottle SVG illustration -->
-        <div style="display: flex; flex-direction: column; align-items: center; padding-top: 1rem;">
-          <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 260px;" aria-label="Green Bottle Pay Scale — three-tier sliding scale visualization">
-            <!-- Bottle neck -->
-            <rect x="82" y="10" width="36" height="8" rx="2" fill="none" stroke="#1a3a2a" stroke-width="1.5"/>
-            <!-- Bottle neck lower -->
-            <rect x="74" y="18" width="52" height="22" rx="2" fill="none" stroke="#1a3a2a" stroke-width="1.5"/>
-            <!-- Shoulder curve path -->
-            <path d="M74 40 Q60 60 55 90 L55 280 Q55 295 100 295 Q145 295 145 280 L145 90 Q140 60 126 40 Z"
-              fill="#c8dfc8" stroke="#1a3a2a" stroke-width="1.5"/>
-
-            <!-- Tier 3: community (bottom) -->
-            <clipPath id="bottle-clip">
-              <path d="M74 40 Q60 60 55 90 L55 280 Q55 295 100 295 Q145 295 145 280 L145 90 Q140 60 126 40 Z"/>
-            </clipPath>
-            <!-- Bottom fill: community tier -->
-            <rect x="55" y="210" width="90" height="85" fill="#2d6644" opacity="0.25" clip-path="url(#bottle-clip)"/>
-            <!-- Middle fill: reduced tier -->
-            <rect x="55" y="150" width="90" height="60" fill="#2d6644" opacity="0.45" clip-path="url(#bottle-clip)"/>
-            <!-- Top fill: full tier -->
-            <rect x="55" y="90" width="90" height="60" fill="#2d6644" opacity="0.7" clip-path="url(#bottle-clip)"/>
-
-            <!-- Dividing lines -->
-            <line x1="58" y1="210" x2="142" y2="210" stroke="#1a3a2a" stroke-width="0.75" stroke-dasharray="3,2" opacity="0.5"/>
-            <line x1="58" y1="150" x2="142" y2="150" stroke="#1a3a2a" stroke-width="0.75" stroke-dasharray="3,2" opacity="0.5"/>
-
-            <!-- Labels inside bottle -->
-            <text x="100" y="128" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1a3a2a" font-style="italic">$130–150</text>
-            <text x="100" y="185" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1a3a2a" font-style="italic">$100–120</text>
-            <text x="100" y="252" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1a3a2a" font-style="italic">$70–90</text>
-          </svg>
-          <p style="font-family: var(--font-body); font-size: 0.78rem; text-align: center; color: var(--color-stone); margin-top: 1.25rem; max-width: 220px; line-height: 1.6;">
-            The Green Bottle Pay Scale — a community-accountable model for equitable access to care.
-          </p>
-        </div>
-
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-label" style="margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.45rem;">
+          <Flower size={12} />
+          Sliding scale — Green Bottle model
+        </p>
+        <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--color-ink); line-height: 1.15; margin-bottom: 1rem;">
+          Where do you fall on the sliding scale?
+        </h2>
+        <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--color-stone); max-width: 58ch; margin: 0 auto; line-height: 1.8;">
+          Click a bottle to explore which tier describes your financial experience. You self-select your rate — no documentation or means-testing required. Your self-assessment is trusted.
+        </p>
       </div>
+
+      <!-- Three bottles -->
+      <div class="bottles-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: start;">
+        {tiers.map(tier => {
+          const bottleH = 200;
+          const fillH = Math.round(bottleH * tier.fill);
+          const fillY = 40 + (bottleH - fillH);
+          return (
+            <button
+              class="bottle-btn"
+              data-tier={tier.id}
+              aria-expanded="false"
+              style="background: none; border: none; cursor: pointer; text-align: center; padding: 0; width: 100%;"
+            >
+              <!-- Bottle SVG -->
+              <div class="bottle-wrap" style="display: flex; justify-content: center; margin-bottom: 1.25rem;">
+                <svg
+                  viewBox="0 0 120 260"
+                  width="110"
+                  height="240"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <!-- cap ridges -->
+                  <rect x="42" y="4" width="36" height="5" rx="1" fill="#8aac98" stroke="#2d6644" stroke-width="0.75"/>
+                  <line x1="46" y1="4" x2="46" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <line x1="50" y1="4" x2="50" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <line x1="54" y1="4" x2="54" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <line x1="58" y1="4" x2="58" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <line x1="62" y1="4" x2="62" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <line x1="66" y1="4" x2="66" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <line x1="70" y1="4" x2="70" y2="9" stroke="#2d6644" stroke-width="0.4" opacity="0.5"/>
+                  <!-- neck -->
+                  <rect x="44" y="9" width="32" height="16" rx="2" fill="#a8c8b4" stroke="#2d6644" stroke-width="1"/>
+                  <!-- shoulder + body outline -->
+                  <path
+                    d="M44 25 Q30 40 26 60 L26 230 Q26 244 60 244 Q94 244 94 230 L94 60 Q90 40 76 25 Z"
+                    fill="#ddf0e0"
+                    stroke="#2d6644"
+                    stroke-width="1.5"
+                  />
+                  <!-- clip for fill -->
+                  <defs>
+                    <clipPath id={`clip-${tier.id}`}>
+                      <path d="M44 25 Q30 40 26 60 L26 230 Q26 244 60 244 Q94 244 94 230 L94 60 Q90 40 76 25 Z"/>
+                    </clipPath>
+                  </defs>
+                  <!-- fill level -->
+                  <rect
+                    x="26"
+                    y={fillY}
+                    width="68"
+                    height={fillH + 20}
+                    fill="#2d6644"
+                    opacity="0.55"
+                    clip-path={`url(#clip-${tier.id})`}
+                  />
+                  <!-- fill surface line -->
+                  {tier.fill > 0.05 && (
+                    <line
+                      x1="28"
+                      y1={fillY}
+                      x2="92"
+                      y2={fillY}
+                      stroke="#2d6644"
+                      stroke-width="1"
+                      opacity="0.4"
+                      clip-path={`url(#clip-${tier.id})`}
+                    />
+                  )}
+                </svg>
+              </div>
+
+              <!-- Rate label -->
+              <p style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--color-mid); line-height: 1;">{tier.range}</p>
+              <p class="section-label" style="margin-top: 0.3rem; margin-bottom: 0.75rem;">{tier.label}</p>
+              <p class="bottle-cta" style="font-family: var(--font-body); font-size: 0.8rem; color: var(--color-mid); text-decoration: underline; text-underline-offset: 3px;">
+                See if this is you ↓
+              </p>
+
+              <!-- Expandable details -->
+              <div class="bottle-details" aria-hidden="true" style="display: none; margin-top: 1.5rem; text-align: left; border-top: 0.5px solid var(--color-mid); padding-top: 1.25rem;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                  {tier.items.map(item => (
+                    <li style="display: flex; align-items: flex-start; gap: 0.6rem; font-family: var(--font-body); font-size: 0.88rem; color: var(--color-stone); line-height: 1.55;">
+                      <span style="color: var(--color-mid); flex-shrink: 0; margin-top: 0.2em;">
+                        <img src="/leaf.svg" width="14" height="12" aria-hidden="true" alt="" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-mid); margin-top: 1.25rem; font-style: italic;">
+                  Suggested rate: {tier.range}
+                </p>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      <p style="font-family: var(--font-body); font-size: 0.8rem; color: var(--color-stone); text-align: center; margin-top: 3rem; line-height: 1.7; max-width: 64ch; margin-left: auto; margin-right: auto; opacity: 0.85;">
+        *Basic needs include food, housing, and transportation.<br />
+        **Expendable income might mean you can buy coffee out, go to the movies, buy new clothes or books each month.
+      </p>
+
     </div>
   </section>
 
   <!-- Insurance, payment, cancellation -->
   <section style="padding: 4rem 0;">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
-
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;" class="policy-grid">
 
         <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem 2rem 2rem 0;">
           <p class="section-label" style="margin-bottom: 0.75rem;">Insurance</p>
-          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-ink);">
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-stone);">
             Currently out-of-network. Accepts VCAP.
-            <!-- PLACEHOLDER: Confirm "VCAP" acronym and full program name with River before publishing -->
             Superbills provided upon request so clients can submit for out-of-network reimbursement independently.
           </p>
         </div>
 
         <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem; border-left: 0.5px solid var(--color-mid);">
           <p class="section-label" style="margin-bottom: 0.75rem;">Payment</p>
-          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-ink);">
-            <!-- PLACEHOLDER: Add accepted payment methods (credit card, HSA/FSA, etc.) -->
-            Payment is due at time of service. Accepted methods: [payment methods — update with River].
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-stone);">
+            Payment is due at time of service. Please reach out to discuss accepted payment methods.
           </p>
         </div>
 
         <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem 0 2rem 2rem; border-left: 0.5px solid var(--color-mid);">
           <p class="section-label" style="margin-bottom: 0.75rem;">Cancellation</p>
-          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-ink);">
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-stone);">
             50% of the session fee is charged for cancellations made with less than 24 hours notice.
           </p>
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -185,8 +291,28 @@ const services = [
 </Layout>
 
 <style>
+  .bottle-btn {
+    transition: transform 0.15s ease;
+  }
+  .bottle-btn:hover .bottle-wrap svg path:first-of-type,
+  .bottle-btn:hover .bottle-wrap {
+    opacity: 0.9;
+  }
+  .bottle-btn:hover {
+    transform: translateY(-3px);
+  }
+  .bottle-btn[aria-expanded="true"] {
+    transform: none;
+  }
+  .bottle-btn[aria-expanded="true"] .bottle-cta {
+    display: none;
+  }
+  .bottle-btn[aria-expanded="true"] .bottle-wrap svg {
+    filter: drop-shadow(0 4px 12px rgba(45,102,68,0.18));
+  }
+
   @media (max-width: 700px) {
-    .services-header, .fees-grid, .policy-grid {
+    .services-header, .fees-grid, .policy-grid, .bottles-grid {
       grid-template-columns: 1fr !important;
       gap: 2rem !important;
     }
@@ -196,3 +322,29 @@ const services = [
     }
   }
 </style>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.bottle-btn');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const details = btn.querySelector<HTMLElement>('.bottle-details');
+
+      // Close all
+      btns.forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        const d = b.querySelector<HTMLElement>('.bottle-details');
+        if (d) d.style.display = 'none';
+      });
+
+      // Toggle clicked
+      if (!isOpen && details) {
+        btn.setAttribute('aria-expanded', 'true');
+        details.style.display = 'block';
+        details.removeAttribute('aria-hidden');
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+</script>

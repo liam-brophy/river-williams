@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTABlock from '../components/CTABlock.astro';
+import Leaf from '../components/icons/Leaf.astro';
+import Flower from '../components/icons/Flower.astro';
 ---
 
 <Layout
@@ -16,7 +18,7 @@ import CTABlock from '../components/CTABlock.astro';
         <!-- Left: page title -->
         <div style="padding: 4rem 3rem 4rem 0; border-right: 0.5px solid var(--color-mid); display: flex; flex-direction: column; justify-content: flex-end;">
           <p class="section-label" style="margin-bottom: 1rem;">About</p>
-          <h1 style="font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.05;">
+          <h1 style="font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 700; font-style: normal; color: var(--color-ink); line-height: 1.05;">
             About River
           </h1>
           <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); margin-top: 1.5rem; line-height: 1.75; max-width: 38ch;">
@@ -44,7 +46,7 @@ import CTABlock from '../components/CTABlock.astro';
 
       <!-- Main bio -->
       <div>
-        <div style="display: flex; flex-direction: column; gap: 1.6rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-ink);">
+        <div style="display: flex; flex-direction: column; gap: 1.6rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-stone);">
 
           <p>
             My work is rooted in somatic trauma specialization, curiosity, and trust in each person's innate wisdom. I emphasize creating internal safety and flexibility rather than pushing for change, allowing healing to unfold at a pace the body and internal world can sustain.
@@ -78,7 +80,10 @@ import CTABlock from '../components/CTABlock.astro';
         <div style="position: sticky; top: 2rem;">
 
           <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem; margin-bottom: 2.5rem;">
-            <p class="section-label" style="margin-bottom: 1.25rem;">Training &amp; Credentials</p>
+            <p class="section-label" style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.45rem;">
+              <Flower size={11} style="color: var(--color-mid);" />
+              Training &amp; Credentials
+            </p>
             <ul style="display: flex; flex-direction: column; gap: 0.85rem; list-style: none; padding: 0; margin: 0;">
               {[
                 'Licensed Clinical Social Worker (LCSW)',
@@ -91,8 +96,8 @@ import CTABlock from '../components/CTABlock.astro';
                 'Spiritual care and counseling',
                 'Kripalu 200-hr Yoga teacher',
               ].map(item => (
-                <li style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--color-ink); line-height: 1.5;">
-                  <span style="width: 5px; height: 5px; border-radius: 50%; background: var(--color-mid); flex-shrink: 0;"></span>
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--color-stone); line-height: 1.5;">
+                  <span style="color: var(--color-mid); flex-shrink: 0; opacity: 0.8;"><Leaf size={13} /></span>
                   {item}
                 </li>
               ))}

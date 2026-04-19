@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Leaf from '../components/icons/Leaf.astro';
+import Flower from '../components/icons/Flower.astro';
 ---
 
 <Layout
@@ -11,8 +13,11 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Header -->
     <div style="margin-bottom: 3.5rem;">
-      <p class="section-label" style="margin-bottom: 1rem;">Reach out</p>
-      <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.1; margin-bottom: 1.25rem;">
+      <p class="section-label" style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.45rem;">
+        <Flower size={11} style="color: var(--color-mid);" />
+        Reach out
+      </p>
+      <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700; font-style: normal; color: var(--color-ink); line-height: 1.1; margin-bottom: 1.25rem;">
         Get in Touch
       </h1>
       <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); line-height: 1.75; max-width: 52ch;">
@@ -27,11 +32,10 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Contact form -->
       <div>
-        <p style="font-family: var(--font-display); font-size: 1.4rem; font-style: italic; color: var(--color-ink); margin-bottom: 2.5rem;">
+        <p style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; font-style: normal; color: var(--color-ink); margin-bottom: 2.5rem;">
           Send a message
         </p>
 
-        <!-- PLACEHOLDER: Confirm Netlify Forms are live after first deploy — test via Netlify dashboard under Forms tab -->
         <form
           name="contact"
           method="POST"
@@ -57,7 +61,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <div>
-            <button type="submit" class="btn btn-filled" style="font-size: 0.75rem; width: 100%; justify-content: center; display: block; text-align: center; padding: 0.85rem 1.5rem;">
+            <button type="submit" class="btn btn-filled" style="font-size: 0.75rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.45rem; padding: 0.85rem 1.5rem;">
+              <Leaf size={13} />
               Send message
             </button>
             <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 0.85rem; line-height: 1.6;">
@@ -75,7 +80,7 @@ import Layout from '../layouts/Layout.astro';
         <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
           <p class="section-label" style="margin-bottom: 1.25rem;">Direct contact</p>
           <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-            <a href="tel:4848419201" style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-ink);">
+            <a href="tel:4848419201" style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-mid);">
               (484) 841-9201
             </a>
             <a href="mailto:Riverwilliamspsychotherapy@proton.me" style="font-family: var(--font-body); font-size: 0.9rem; color: var(--color-stone); text-decoration: underline; text-underline-offset: 3px; word-break: break-all;">
@@ -90,9 +95,39 @@ import Layout from '../layouts/Layout.astro';
         <!-- Free consultation note -->
         <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
           <p class="section-label" style="margin-bottom: 0.75rem;">Free consultation</p>
-          <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--color-ink); line-height: 1.75;">
+          <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--color-stone); line-height: 1.75;">
             River offers a free 20-minute phone or video consultation for new clients — no commitment required. Use the form or booking portal to request one.
           </p>
+        </div>
+
+        <!-- Profile links -->
+        <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+          <p class="section-label" style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.45rem;">
+            <Flower size={11} style="color: var(--color-mid);" />
+            Find River online
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a
+              href="https://www.psychologytoday.com/us/therapists/river-joshua-williams-philadelphia-pa/1695729"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              style="font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.5rem; width: fit-content;"
+            >
+              <Leaf size={12} />
+              Psychology Today Profile
+            </a>
+            <a
+              href="https://www.linkedin.com/in/river-joshua-williams-lcsw-mss-cctp-775bb438/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn"
+              style="font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.5rem; width: fit-content;"
+            >
+              <Leaf size={12} />
+              LinkedIn
+            </a>
+          </div>
         </div>
 
         <!-- SimplePractice booking widget -->
@@ -102,15 +137,9 @@ import Layout from '../layouts/Layout.astro';
             Existing clients and new inquiries can use the booking portal to view availability and request appointments.
           </p>
 
-          <!-- PLACEHOLDER: Paste SimplePractice public booking URL here once River provides it -->
-          <!-- Request: ask River for the public-facing booking URL from SimplePractice (no account access needed) -->
-          <!-- Once received, replace this block with either: -->
-          <!--   <a href="[SP_URL]" class="btn" target="_blank" rel="noopener">Open booking portal</a> -->
-          <!--   or embed the SimplePractice <script> widget snippet directly below -->
-          <div style="border: 0.5px solid var(--color-mid); padding: 2rem; text-align: center;">
-            <p style="font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--color-stone);">Booking portal</p>
-            <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 0.4rem; opacity: 0.7;">SimplePractice widget — awaiting URL from River</p>
-          </div>
+          <a href="/contact" class="btn" style="font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+            Request an appointment via form
+          </a>
         </div>
 
       </div>

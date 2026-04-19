@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 @import "tailwindcss";
 
 @theme {
   /* Color system — all green */
-  --color-ink:    #1a3a2a;   /* near-black green — body text, headings */
+  --color-ink:    #1a3a2a;   /* near-black green — headings, borders */
   --color-mid:    #2d6644;   /* mid green — accents, borders, rules */
   --color-wash:   #c8dfc8;   /* light green — duotone bg, tints */
   --color-paper:  #f5f0e8;   /* warm off-white — page background */
-  --color-stone:  #4a6858;   /* muted green — secondary text */
+  --color-stone:  #3a6a50;   /* friendly green — body text, labels */
 
   /* Typography — all serif */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
   --font-body:    'EB Garamond', Georgia, serif;
 }
 
@@ -26,6 +26,7 @@
   body {
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
+    cursor: url('/flower.svg') 55 50, auto;
   }
 
   h1, h2, h3, h4, h5 {
@@ -36,7 +37,7 @@
 
   p {
     line-height: 1.8;
-    color: var(--color-ink);
+    color: var(--color-stone);
   }
 
   a {

@@ -1,4 +1,6 @@
 ---
+import Leaf from './icons/Leaf.astro';
+
 interface Props {
   title: string;
   modalities?: string;
@@ -14,7 +16,8 @@ const { title, modalities, duration, rate, description } = Astro.props;
   <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; align-items: start;" class="card-grid">
 
     <div>
-      <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; color: var(--color-ink); margin-bottom: 0.6rem;">
+      <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; color: var(--color-ink); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: var(--color-mid); opacity: 0.7; flex-shrink: 0;"><Leaf size={14} /></span>
         {title}
       </h3>
       {description && (
@@ -27,12 +30,12 @@ const { title, modalities, duration, rate, description } = Astro.props;
 
     <div>
       <p class="section-label" style="margin-bottom: 0.3rem;">Duration</p>
-      <p style="font-family: var(--font-display); font-size: 1rem; color: var(--color-ink);">{duration}</p>
+      <p style="font-family: var(--font-display); font-size: 1rem; color: var(--color-mid);">{duration}</p>
     </div>
 
     <div>
       <p class="section-label" style="margin-bottom: 0.3rem;">Rate</p>
-      <p style="font-family: var(--font-display); font-size: 1rem; color: var(--color-ink);">{rate}</p>
+      <p style="font-family: var(--font-display); font-size: 1rem; color: var(--color-mid);">{rate}</p>
     </div>
 
   </div>

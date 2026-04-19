@@ -2,52 +2,88 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import CTABlock from '../components/CTABlock.astro';
+import Flower from '../components/icons/Flower.astro';
 ---
 
 <Layout
   title="Home"
   description="River Williams Psychotherapy — Somatic and EMDR therapy for adults navigating trauma, anxiety, and life transitions. Philadelphia, PA."
 >
-  <Hero />
 
-  <!-- Intro section: two-column editorial layout -->
-  <section style="padding: 5rem 0; border-bottom: 0.5px solid var(--color-mid);">
+  <!-- Hero text above the image -->
+  <section style="padding: 4rem 0 3rem; border-bottom: 0.5px solid var(--color-mid);">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end;" class="hero-text-grid">
 
-      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start;" class="intro-grid">
-
-        <!-- Left: label + botanical accent -->
         <div>
-          <p class="section-label" style="margin-bottom: 2rem;">The work</p>
-          <!-- PLACEHOLDER: Secondary botanical image, small format — passionflower or leaf detail -->
-          <div
-            class="botanical-placeholder"
-            data-label="Botanical detail"
-            style="height: 240px; width: 100%;"
-          ></div>
+          <p class="section-label" style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <Flower size={14} />
+            Philadelphia, PA · LCSW
+          </p>
+          <h1 style="font-family: var(--font-display); font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 700; font-style: normal; color: var(--color-ink); line-height: 1.08;">
+            Healing through<br />the body, not<br />just the mind.
+          </h1>
         </div>
 
-        <!-- Right: intro copy -->
-        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-ink);">
+        <div>
+          <p style="font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-stone); margin-bottom: 2rem;">
+            Are you looking for a trauma-focused approach to working with Complex PTSD, nervous system stress, anxiety, or a significant life transition? Perhaps you've done therapy before and still feel something hasn't shifted at the deeper layers where trauma lives.
+          </p>
+          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="/contact" class="btn btn-filled" style="font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+              Book Free Consultation
+            </a>
+            <a href="/about" style="font-family: var(--font-body); font-size: 0.85rem; color: var(--color-stone); letter-spacing: 0.04em; text-decoration: underline; text-underline-offset: 4px;">
+              About River →
+            </a>
+          </div>
+          <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 0.85rem; opacity: 0.75;">
+            20-minute consultation, no commitment
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero image -->
+  <Hero />
+
+  <!-- Intro copy -->
+  <section style="padding: 5rem 0; border-bottom: 0.5px solid var(--color-mid);">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start;" class="intro-grid">
+
+        <div>
+          <p class="section-label" style="margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
+            <Flower size={13} />
+            The work
+          </p>
+          <!-- Decorative plant cluster -->
+          <div style="display: flex; gap: 1.25rem; align-items: flex-end; color: var(--color-mid); opacity: 0.6;">
+            <img src="/plant.svg" width="52" height="66" aria-hidden="true" alt="" />
+            <img src="/plant2.svg" width="66" height="70" aria-hidden="true" alt="" />
+            <img src="/plant.svg" width="40" height="51" aria-hidden="true" alt="" style="transform: scaleX(-1);" />
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-stone);">
           <p>
             My work is rooted in somatic trauma specialization, curiosity, and trust in each person's innate wisdom. I emphasize creating internal safety and flexibility rather than pushing for change, allowing healing to unfold at a pace the body and internal world can sustain.
           </p>
-
           <p>
             I am trained in DBT, Internal Family Systems, Attachment-Focused EMDR, Somatic Experiencing, and Mindfulness-Based Stress Reduction — drawing additional grounding from spiritual care, ancestral connection, and ritual. Sessions are collaborative, attuned, and paced with careful attention to consent and the nervous system.
           </p>
-
           <p>
             For over ten years I have lived, studied, and practiced mindfulness and Buddhist traditions, and am trained as a Kripalu 200-hour Yoga teacher. This embodied foundation supports clients in reconnecting with their bodies, cultivating internal trust, and creating meaningful, lasting change.
           </p>
         </div>
 
       </div>
-
     </div>
   </section>
 
-  <!-- Approach strip: three short statements -->
+  <!-- Approach strip -->
   <section style="padding: 4rem 0; border-bottom: 0.5px solid var(--color-mid);">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;" class="approach-grid">
@@ -57,7 +93,10 @@ import CTABlock from '../components/CTABlock.astro';
           { label: 'Relational', body: 'Healing happens in relationship. The therapeutic connection is itself a part of the work.' },
         ].map((item, i) => (
           <div style={`padding: 2.5rem ${i === 2 ? '0' : '2.5rem'} 2.5rem ${i === 0 ? '0' : '2.5rem'}; border-top: 0.5px solid var(--color-mid); ${i > 0 ? 'border-left: 0.5px solid var(--color-mid);' : ''}`}>
-            <p class="section-label" style="margin-bottom: 0.75rem;">{item.label}</p>
+            <p class="section-label" style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.45rem;">
+              <Flower size={12} />
+              {item.label}
+            </p>
             <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-stone);">{item.body}</p>
           </div>
         ))}
@@ -78,8 +117,9 @@ import CTABlock from '../components/CTABlock.astro';
 
 <style>
   @media (max-width: 700px) {
-    .intro-grid, .approach-grid {
+    .hero-text-grid, .intro-grid, .approach-grid {
       grid-template-columns: 1fr !important;
+      gap: 2rem !important;
     }
     .approach-grid > * {
       border-left: none !important;

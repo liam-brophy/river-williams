@@ -1,74 +1,13 @@
 ---
 ---
 
-<section style="background: var(--color-paper); border-bottom: 0.5px solid var(--color-mid);">
-  <div class="max-w-6xl mx-auto px-6 md:px-10">
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 560px;" class="hero-grid">
-
-      <!-- Left: typographic content -->
-      <div style="padding: 4rem 3rem 4rem 0; display: flex; flex-direction: column; justify-content: space-between; border-right: 0.5px solid var(--color-mid);">
-
-        <div>
-          <p class="section-label" style="margin-bottom: 2rem;">Philadelphia, PA · LCSW</p>
-
-          <h1 style="font-family: var(--font-display); font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 400; line-height: 1.1; color: var(--color-ink); margin-bottom: 1.75rem; font-style: italic;">
-            Healing through<br />the body,<br /><em style="font-style: normal; font-weight: 600;">not just the mind.</em>
-          </h1>
-
-          <p style="font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-stone); max-width: 44ch;">
-            Are you looking for a trauma-focused approach to working with Complex PTSD, nervous system stress, anxiety, or a significant life transition? Perhaps you've done therapy before — gained insight, found coping tools — and still feel that something hasn't shifted at the deeper layers where trauma lives.
-          </p>
-        </div>
-
-        <div style="margin-top: 3rem;">
-          <div class="rule" style="margin-bottom: 1.75rem;"></div>
-          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-            <a href="/contact" class="btn btn-filled" style="font-size: 0.75rem; letter-spacing: 0.1em;">
-              Book Free Consultation
-            </a>
-            <a href="/about" style="font-family: var(--font-body); font-size: 0.85rem; color: var(--color-stone); letter-spacing: 0.04em; text-decoration: underline; text-underline-offset: 4px;">
-              About River →
-            </a>
-          </div>
-          <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 0.85rem; letter-spacing: 0.02em;">
-            20-minute consultation, no commitment
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Right: passionflower (Maypop) — duotone via CSS -->
-      <div class="botanical-wrapper" style="position: relative;">
-        <img
-          src="/images/maypop.webp"
-          alt="Passionflower — Maypop"
-          class="botanical-img"
-          style="min-height: 560px; object-fit: cover;"
-        />
-        <p class="section-label" style="position: absolute; bottom: 1.25rem; left: 1.25rem; color: var(--color-mid); opacity: 0.8;">
-          Somatic · EMDR · Psychodynamic
-        </p>
-      </div>
-
-    </div>
-
+<section style="border-bottom: 0.5px solid var(--color-mid);">
+  <div class="botanical-wrapper" style="width: 100%; height: 380px; overflow: hidden;">
+    <img
+      src="/images/maypop.webp"
+      alt="Passionflower — Maypop"
+      class="botanical-img"
+      style="width: 100%; height: 380px; object-fit: cover; object-position: center 30%;"
+    />
   </div>
 </section>
-
-<style>
-  @media (max-width: 700px) {
-    .hero-grid {
-      grid-template-columns: 1fr !important;
-    }
-    .hero-grid > *:first-child {
-      border-right: none !important;
-      padding-right: 0 !important;
-      padding-bottom: 2.5rem;
-      border-bottom: 0.5px solid var(--color-mid);
-    }
-    .hero-grid > *:last-child img {
-      min-height: 280px !important;
-    }
-  }
-</style>

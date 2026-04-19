@@ -1,4 +1,7 @@
 ---
+import Sprig from './icons/Sprig.astro';
+import Leaf from './icons/Leaf.astro';
+
 interface Props {
   heading?: string;
   body?: string;
@@ -22,16 +25,26 @@ const {
   <div class="max-w-6xl mx-auto px-6 md:px-10">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end;" class="cta-grid">
 
-      <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.2;">
-        {heading}
-      </h2>
+      <div>
+        <div style="color: var(--color-mid); opacity: 0.6; margin-bottom: 1.25rem; display: flex; gap: 0.6rem; align-items: flex-end;">
+          <Sprig size={24} />
+          <Sprig size={32} />
+          <Sprig size={20} />
+        </div>
+        <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; font-style: normal; color: var(--color-ink); line-height: 1.2;">
+          {heading}
+        </h2>
+      </div>
 
       <div>
         <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); line-height: 1.75; margin-bottom: 2rem;">
           {body}
         </p>
         <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
-          <a href={primaryHref} class="btn btn-filled" style="font-size: 0.75rem;">{primaryLabel}</a>
+          <a href={primaryHref} class="btn btn-filled" style="font-size: 0.75rem; display: inline-flex; align-items: center; gap: 0.45rem;">
+            <Leaf size={12} />
+            {primaryLabel}
+          </a>
           {secondaryLabel && secondaryHref && (
             <a href={secondaryHref} class="btn" style="font-size: 0.75rem;">{secondaryLabel}</a>
           )}

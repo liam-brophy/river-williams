@@ -1,21 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Flower from '../components/icons/Flower.astro';
 ---
 
 <Layout
   title="Message Sent"
   description="Thank you for reaching out to River Williams Psychotherapy."
 >
-  <div class="max-w-2xl mx-auto px-6 py-32 text-center">
-    <div class="w-12 h-px bg-terracotta mx-auto mb-10"></div>
-    <h1 class="font-serif text-forest text-4xl font-medium mb-5">Thank you for reaching out.</h1>
-    <p class="font-sans text-slate text-base leading-relaxed mb-10">
+  <div style="max-width: 36rem; margin: 0 auto; padding: 7rem 1.5rem; text-align: center;">
+    <div style="color: var(--color-mid); margin-bottom: 2rem; display: flex; justify-content: center;">
+      <Flower size={36} />
+    </div>
+    <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--color-ink); line-height: 1.15; margin-bottom: 1.25rem;">
+      Thank you for reaching out.
+    </h1>
+    <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); line-height: 1.8; margin-bottom: 2.5rem;">
       Your message has been received. River typically responds within 2–3 business days.
-      In the meantime, feel free to explore more about the practice.
     </p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="/" class="btn-primary">Back to home</a>
-      <a href="/services" class="btn-secondary">View services</a>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+      <a href="/" class="btn btn-filled" style="font-size: 0.75rem;">Back to home</a>
+      <a href="/services" class="btn" style="font-size: 0.75rem;">View services</a>
     </div>
   </div>
 </Layout>
