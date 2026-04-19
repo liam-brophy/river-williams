@@ -5,82 +5,105 @@ import CTABlock from '../components/CTABlock.astro';
 
 <Layout
   title="About River"
-  description="Learn about River Williams — licensed psychotherapist specializing in somatic therapy, EMDR, and trauma-informed care."
+  description="About River Williams, LCSW — licensed psychotherapist in Philadelphia specializing in somatic therapy, EMDR, and trauma-informed care."
 >
-  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16">
-    <header class="mb-14">
-      <p class="font-sans text-muted text-sm tracking-widest uppercase mb-3">About</p>
-      <h1 class="font-serif text-forest text-4xl md:text-5xl font-medium">About River</h1>
-    </header>
 
-    <div class="grid md:grid-cols-3 gap-12">
+  <!-- Page header with botanical image block -->
+  <div style="border-bottom: 0.5px solid var(--color-mid);">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;" class="about-header">
+
+        <!-- Left: page title -->
+        <div style="padding: 4rem 3rem 4rem 0; border-right: 0.5px solid var(--color-mid);">
+          <p class="section-label" style="margin-bottom: 1rem;">About</p>
+          <h1 style="font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.05;">
+            About River
+          </h1>
+          <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); margin-top: 1.5rem; line-height: 1.75; max-width: 38ch;">
+            Philadelphia-based licensed psychotherapist specializing in somatic and EMDR work.
+          </p>
+        </div>
+
+        <!-- Right: botanical image placeholder -->
+        <!-- PLACEHOLDER: Replace with headshot or botanical image using .botanical-wrapper / .botanical-img -->
+        <!-- Source: Psychology Today profile (psychologytoday.com/profile/1695729) or alternate image River provides -->
+        <div
+          class="botanical-placeholder"
+          data-label="Headshot or botanical image"
+          style="min-height: 320px;"
+        ></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bio + credentials -->
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-16">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 5rem;" class="about-body">
 
       <!-- Main bio -->
-      <div class="md:col-span-2 space-y-7 font-sans text-slate text-base leading-[1.85]">
-        <!-- PLACEHOLDER: Replace with River's actual bio — paragraph 1 should cover background and clinical training (degree, licensure, years of experience, geographic context) -->
-        <p>
-          River Williams is a licensed psychotherapist with a background in somatic psychology
-          and a deep commitment to trauma-informed, relational care. After completing graduate
-          training in [Program / University], River has spent [X] years working with individuals
-          navigating the aftermath of trauma, the complexity of anxiety, and the often-disorienting
-          territory of major life change.
-        </p>
+      <div>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.85; color: var(--color-ink);">
 
-        <!-- PLACEHOLDER: Replace with River's actual therapeutic philosophy paragraph — how they work, what they believe about healing, what clients can expect from the relational dynamic -->
-        <p>
-          River's approach is integrative and body-centered. Rather than treating symptoms in
-          isolation, the work attends to the whole person — the stories we carry, the ways our
-          nervous systems have learned to protect us, and the slower, quieter process of building
-          new patterns of safety and connection. Sessions are collaborative and unhurried.
-          You set the pace.
-        </p>
+          <!-- PLACEHOLDER: Replace with River's full bio — paragraph 1: background, licensure, years of experience, Philadelphia context -->
+          <p>
+            River Williams is a licensed clinical social worker with a background in somatic psychology and a deep commitment to trauma-informed, relational care. After completing graduate training at [Program / University], River has spent [X] years working with individuals navigating the aftermath of trauma, the complexity of anxiety, and the often-disorienting territory of major life change.
+          </p>
 
-        <!-- PLACEHOLDER: Replace with a personal note from River — something authentic about why this work, what draws them to somatic and trauma work specifically, any relevant personal context they're comfortable sharing -->
-        <p>
-          Drawn to this work through [personal or professional experience River wishes to share],
-          River believes that therapy is most effective when it feels genuinely relational —
-          not a performance of expertise, but a shared act of curiosity. River brings warmth,
-          directness, and a grounded sense of humor to the work.
-        </p>
+          <!-- PLACEHOLDER: Replace with River's therapeutic philosophy — how they work, what they believe about healing, what clients can expect relationally -->
+          <p>
+            River's approach is integrative and body-centered. Rather than treating symptoms in isolation, the work attends to the whole person — the stories we carry, the ways our nervous systems have learned to protect us, and the slower, quieter process of building new patterns of safety and connection. Sessions are collaborative and unhurried. You set the pace.
+          </p>
+
+          <!-- PLACEHOLDER: Replace with a personal note from River — what draws them to this work, any relevant personal context they want to share, something that conveys relational warmth and specificity -->
+          <p>
+            Drawn to this work through [personal or professional experience River wishes to share], River believes that therapy is most effective when it feels genuinely relational — not a performance of expertise, but a shared act of curiosity. River brings warmth, directness, and a grounded sense of humor to the work.
+          </p>
+
+        </div>
+
+        <!-- Second botanical image placeholder (mid-page) -->
+        <!-- PLACEHOLDER: Optional secondary botanical image — passionflower, honey locust spines, or stream imagery -->
+        <div style="margin-top: 3rem; border-top: 0.5px solid var(--color-mid); padding-top: 2rem;">
+          <div
+            class="botanical-placeholder"
+            data-label="Secondary botanical image"
+            style="height: 220px;"
+          ></div>
+        </div>
       </div>
 
       <!-- Credentials sidebar -->
-      <aside class="md:col-span-1">
-        <div class="bg-sand rounded-2xl p-7 sticky top-8">
-          <h2 class="font-serif text-forest text-xl font-medium mb-5">Training &amp; Credentials</h2>
-          <ul class="space-y-3 font-sans text-slate text-sm leading-relaxed">
-            <li class="flex items-start gap-2">
-              <span class="text-terracotta mt-1">&#x2022;</span>
-              <span>Licensed Psychotherapist</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-terracotta mt-1">&#x2022;</span>
-              <span>EMDR Certified</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-terracotta mt-1">&#x2022;</span>
-              <span>Somatic Experiencing training</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-terracotta mt-1">&#x2022;</span>
-              <span>Dialectical Behavior Therapy (DBT)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-terracotta mt-1">&#x2022;</span>
-              <span>Psychodynamic orientation</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-terracotta mt-1">&#x2022;</span>
-              <span>Spiritual care and counseling</span>
-            </li>
-          </ul>
+      <aside>
+        <div style="position: sticky; top: 2rem;">
 
-          <!-- PLACEHOLDER: Add licensure number and state once confirmed -->
-          <div class="mt-6 pt-6 border-t border-sand">
-            <p class="font-sans text-xs text-muted leading-relaxed">
-              Licensed in [State] · License #[XXXXXX]
+          <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem; margin-bottom: 2.5rem;">
+            <p class="section-label" style="margin-bottom: 1.25rem;">Training &amp; Credentials</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem; list-style: none; padding: 0; margin: 0;">
+              {[
+                'Licensed Clinical Social Worker (LCSW)',
+                'EMDR Certified',
+                'Somatic Experiencing training',
+                'Dialectical Behavior Therapy (DBT)',
+                'Psychodynamic orientation',
+                'Spiritual care and counseling',
+              ].map(item => (
+                <li style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--color-ink); line-height: 1.5;">
+                  <span style="width: 5px; height: 5px; border-radius: 50%; background: var(--color-mid); flex-shrink: 0;"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+            <p class="section-label" style="margin-bottom: 0.5rem;">Licensure</p>
+            <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--color-stone); line-height: 1.6;">
+              Pennsylvania LCSW<br />
+              License #CW026881
             </p>
           </div>
+
         </div>
       </aside>
 
@@ -88,11 +111,27 @@ import CTABlock from '../components/CTABlock.astro';
   </div>
 
   <CTABlock
-    heading="Want to learn more about working together?"
-    body="Explore River's services and rates, or reach out directly to ask questions and get started."
-    primaryLabel="View services & rates"
-    primaryHref="/services"
-    secondaryLabel="Get in touch"
-    secondaryHref="/contact"
+    heading="Want to work together?"
+    body="Schedule a free 20-minute consultation to ask questions, share what's bringing you in, and see if it feels like a good fit."
+    primaryLabel="Book Free Consultation"
+    primaryHref="/contact"
+    secondaryLabel="View services"
+    secondaryHref="/services"
   />
+
 </Layout>
+
+<style>
+  @media (max-width: 700px) {
+    .about-header, .about-body {
+      grid-template-columns: 1fr !important;
+    }
+    .about-header > *:first-child {
+      border-right: none !important;
+      padding-right: 0 !important;
+    }
+    .about-header > *:last-child {
+      min-height: 240px;
+    }
+  }
+</style>

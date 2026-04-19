@@ -1,46 +1,92 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import CTABlock from '../components/CTABlock.astro';
 ---
 
 <Layout
   title="Home"
-  description="River Williams Psychotherapy — Somatic and EMDR therapy for adults navigating trauma, anxiety, and life transitions."
+  description="River Williams Psychotherapy — Somatic and EMDR therapy for adults navigating trauma, anxiety, and life transitions. Philadelphia, PA."
 >
   <Hero />
 
-  <!-- Intro section -->
-  <section class="max-w-3xl mx-auto px-6 md:px-12 py-20">
-    <!-- PLACEHOLDER: Replace with River's actual introductory copy — 2–3 paragraphs, warm and grounded in tone, emphasizing somatic approach and relational presence -->
+  <!-- Intro section: two-column editorial layout -->
+  <section style="padding: 5rem 0; border-bottom: 0.5px solid var(--color-mid);">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
 
-    <div class="space-y-6 font-sans text-slate text-base leading-[1.85]">
-      <p>
-        Therapy, at its best, is not only a conversation — it is a place where the body's
-        accumulated wisdom is finally given room to speak. If you've found yourself stuck in
-        cycles of anxiety, grief, or trauma responses that talk alone hasn't been able to touch,
-        you're not alone, and you're not broken.
-      </p>
-      <p>
-        River works from the understanding that healing happens relationally, somatically, and
-        at the pace your nervous system allows. Sessions weave together EMDR, somatic
-        experiencing, and psychodynamic awareness to help you build safety in your own body
-        and create lasting change — not just symptom management.
-      </p>
-      <p>
-        Whether you're navigating a specific trauma history, a major life transition, or a
-        quieter sense that something isn't quite right, this practice offers a steady, curious,
-        and non-judgmental space to explore that.
-      </p>
-    </div>
+      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start;" class="intro-grid">
 
-    <div class="section-divider"></div>
+        <!-- Left: label + botanical accent -->
+        <div>
+          <p class="section-label" style="margin-bottom: 2rem;">The work</p>
+          <!-- PLACEHOLDER: Secondary botanical image, small format — passionflower or leaf detail -->
+          <div
+            class="botanical-placeholder"
+            data-label="Botanical detail"
+            style="height: 240px; width: 100%;"
+          ></div>
+        </div>
 
-    <div class="flex flex-wrap justify-center gap-5 mt-12">
-      <a href="/about" class="btn-primary">Learn about River</a>
-      <a href="/services" class="btn-secondary">View services &amp; rates</a>
+        <!-- Right: intro copy -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-ink);">
+          <!-- PLACEHOLDER: Replace with River's full intro copy — 2–3 paragraphs. Tone: warm, grounded, specific. Psychology Today profile (psychologytoday.com/profile/1695729) has a condensed version; request expanded copy from River -->
+
+          <p>
+            Therapy, at its best, is not only a conversation — it is a place where the body's accumulated wisdom is finally given room to speak. If you've found yourself stuck in cycles of anxiety, grief, or trauma responses that talk alone hasn't been able to touch, you're not alone, and you're not broken.
+          </p>
+
+          <p>
+            River works from the understanding that healing happens relationally, somatically, and at the pace your nervous system allows. Sessions weave together EMDR, somatic experiencing, and psychodynamic awareness to help you build safety in your own body and create lasting change — not just symptom management.
+          </p>
+
+          <p>
+            Whether you're navigating a specific trauma history, a major life transition, or a quieter sense that something isn't quite right, this practice offers a steady, curious, and non-judgmental space to explore that.
+          </p>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <!-- Visual divider before footer -->
-  <div class="w-full h-px bg-sand max-w-5xl mx-auto px-6"></div>
+  <!-- Approach strip: three short statements -->
+  <section style="padding: 4rem 0; border-bottom: 0.5px solid var(--color-mid);">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;" class="approach-grid">
+        {[
+          { label: 'Somatic', body: 'Attending to what the body holds — sensations, posture, breath — as a pathway to lasting change.' },
+          { label: 'EMDR', body: 'Evidence-based trauma processing that works at the level of memory and nervous system response.' },
+          { label: 'Relational', body: 'Healing happens in relationship. The therapeutic connection is itself a part of the work.' },
+        ].map((item, i) => (
+          <div style={`padding: 2.5rem ${i === 2 ? '0' : '2.5rem'} 2.5rem ${i === 0 ? '0' : '2.5rem'}; border-top: 0.5px solid var(--color-mid); ${i > 0 ? 'border-left: 0.5px solid var(--color-mid);' : ''}`}>
+            <p class="section-label" style="margin-bottom: 0.75rem;">{item.label}</p>
+            <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-stone);">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    heading="A free 20-minute consultation, no commitment."
+    body="It's a chance to ask questions, share what's bringing you in, and see if working together feels right."
+    primaryLabel="Book Free Consultation"
+    primaryHref="/contact"
+    secondaryLabel="Learn about River"
+    secondaryHref="/about"
+  />
+
 </Layout>
+
+<style>
+  @media (max-width: 700px) {
+    .intro-grid, .approach-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .approach-grid > * {
+      border-left: none !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+</style>

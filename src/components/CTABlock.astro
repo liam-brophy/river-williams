@@ -10,7 +10,7 @@ interface Props {
 
 const {
   heading = 'Ready to take the next step?',
-  body = 'Reach out to ask questions or schedule a free consultation.',
+  body = 'Reach out to schedule a free 20-minute consultation.',
   primaryLabel,
   primaryHref,
   secondaryLabel,
@@ -18,15 +18,35 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-sand py-16 px-6 md:px-12 mt-16">
-  <div class="max-w-2xl mx-auto text-center">
-    <h2 class="font-serif text-forest text-3xl font-medium mb-4">{heading}</h2>
-    <p class="font-sans text-slate text-base leading-relaxed mb-8">{body}</p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href={primaryHref} class="btn-primary">{primaryLabel}</a>
-      {secondaryLabel && secondaryHref && (
-        <a href={secondaryHref} class="btn-secondary">{secondaryLabel}</a>
-      )}
+<section style="padding: 5rem 0; border-top: 0.5px solid var(--color-mid);">
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end;" class="cta-grid">
+
+      <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.2;">
+        {heading}
+      </h2>
+
+      <div>
+        <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); line-height: 1.75; margin-bottom: 2rem;">
+          {body}
+        </p>
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+          <a href={primaryHref} class="btn btn-filled" style="font-size: 0.75rem;">{primaryLabel}</a>
+          {secondaryLabel && secondaryHref && (
+            <a href={secondaryHref} class="btn" style="font-size: 0.75rem;">{secondaryLabel}</a>
+          )}
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 640px) {
+    .cta-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+    }
+  }
+</style>

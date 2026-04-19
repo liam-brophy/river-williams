@@ -1,32 +1,66 @@
 ---
 ---
 
-<footer class="w-full py-10 px-6 md:px-12 bg-forest text-cream mt-20">
-  <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-8">
-    <div>
-      <p class="font-serif text-lg font-medium mb-1">River Williams Psychotherapy</p>
-      <!-- PLACEHOLDER: Update with actual location/telehealth note -->
-      <p class="text-sand text-sm leading-relaxed">Telehealth & in-person sessions available.<br />Serving clients in [State].</p>
+<footer style="background: var(--color-ink); color: var(--color-paper); margin-top: 6rem;">
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+
+    <!-- Top rule -->
+    <div style="height: 0.5px; background: var(--color-mid); margin-bottom: 3rem;"></div>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;" class="footer-grid">
+
+      <!-- Wordmark + tagline -->
+      <div>
+        <p style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--color-paper);">
+          River Williams Psychotherapy
+        </p>
+        <p style="font-family: var(--font-body); font-size: 0.85rem; line-height: 1.7; color: var(--color-wash);">
+          Somatic and EMDR psychotherapy<br />
+          for adults in Philadelphia, PA.<br />
+          Telehealth and in-person available.
+        </p>
+        <p style="font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-wash); opacity: 0.6; margin-top: 1.25rem;">
+          Pennsylvania LCSW &nbsp;·&nbsp; License #CW026881
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="section-label" style="color: var(--color-wash); opacity: 0.6; margin-bottom: 1rem;">Contact</p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <a href="tel:4848419201" style="font-family: var(--font-body); font-size: 0.9rem; color: var(--color-wash);">(484) 841-9201</a>
+          <a href="mailto:Riverwilliamspsychotherapy@proton.me" style="font-family: var(--font-body); font-size: 0.85rem; color: var(--color-wash); word-break: break-all;">Riverwilliamspsychotherapy<br />@proton.me</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <p class="section-label" style="color: var(--color-wash); opacity: 0.6; margin-bottom: 1rem;">Pages</p>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          {['/', '/about', '/services', '/contact'].map((href, i) => (
+            <a href={href} style="font-family: var(--font-body); font-size: 0.9rem; color: var(--color-wash);">
+              {['Home', 'About', 'Services', 'Contact'][i]}
+            </a>
+          ))}
+        </div>
+      </div>
+
     </div>
 
-    <div class="flex flex-col gap-2 text-sm text-sand">
-      <!-- PLACEHOLDER: Update with actual contact email and phone -->
-      <p><span class="text-cream font-medium">Email:</span> hello@riverwilliamstherapy.com</p>
-      <p><span class="text-cream font-medium">Phone:</span> (000) 000-0000</p>
-    </div>
-
-    <div class="flex flex-col gap-2 text-sm text-sand">
-      <a href="/" class="hover:text-cream transition-colors">Home</a>
-      <a href="/about" class="hover:text-cream transition-colors">About</a>
-      <a href="/services" class="hover:text-cream transition-colors">Services</a>
-      <a href="/contact" class="hover:text-cream transition-colors">Contact</a>
-    </div>
-  </div>
-
-  <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-muted">
-    <p class="text-xs text-muted text-center">
-      &copy; {new Date().getFullYear()} River Williams Psychotherapy. All rights reserved.
-      This site does not collect or store any health information.
+    <!-- Bottom rule + copyright -->
+    <div style="height: 0.5px; background: var(--color-mid); margin-top: 3rem; margin-bottom: 1.5rem; opacity: 0.4;"></div>
+    <p style="font-family: var(--font-body); font-size: 0.72rem; color: var(--color-wash); opacity: 0.45; padding-bottom: 2rem;">
+      &copy; {new Date().getFullYear()} River Williams Psychotherapy. This site does not collect or store clinical or health information. For crisis support, call or text 988.
     </p>
+
   </div>
 </footer>
+
+<style>
+  @media (max-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+  }
+</style>

@@ -1,82 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #F5F0E8;
-  --color-forest: #2D4A3E;
-  --color-slate: #4A5568;
-  --color-terracotta: #C4845A;
-  --color-sand: #E8D5B7;
-  --color-muted: #8A9B8E;
+  /* Color system — all green */
+  --color-ink:    #1a3a2a;   /* near-black green — body text, headings */
+  --color-mid:    #2d6644;   /* mid green — accents, borders, rules */
+  --color-wash:   #c8dfc8;   /* light green — duotone bg, tints */
+  --color-paper:  #f5f0e8;   /* warm off-white — page background */
+  --color-stone:  #4a6858;   /* muted green — secondary text */
 
-  --font-serif: 'Lora', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  /* Typography — all serif */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'EB Garamond', Georgia, serif;
 }
 
 @layer base {
   html {
-    background-color: var(--color-cream);
-    color: var(--color-slate);
-    font-family: var(--font-sans);
-    font-size: 17px;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 18px;
   }
 
   body {
     line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: var(--font-serif);
-    line-height: 1.2;
+    font-family: var(--font-display);
+    line-height: 1.15;
+    color: var(--color-ink);
   }
 
   p {
     line-height: 1.8;
+    color: var(--color-ink);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Thin rule utility */
+  hr {
+    border: none;
+    border-top: 0.5px solid var(--color-mid);
+    margin: 2rem 0;
   }
 }
 
 @layer components {
-  .btn-primary {
+  /* Editorial rule divider */
+  .rule {
+    width: 100%;
+    height: 0.5px;
+    background-color: var(--color-mid);
+  }
+
+  .rule-ink {
+    width: 100%;
+    height: 0.5px;
+    background-color: var(--color-ink);
+  }
+
+  /* Primary button — thin border, no fill */
+  .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--color-forest);
-    color: var(--color-forest);
-    font-family: var(--font-sans);
-    font-weight: 500;
+    font-family: var(--font-body);
     font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    border-radius: 9999px;
-    transition: background-color 0.2s, color 0.2s;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--color-ink);
+    color: var(--color-ink);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
   }
 
-  .btn-primary:hover {
-    background-color: var(--color-forest);
-    color: var(--color-cream);
+  .btn:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
   }
 
-  .btn-secondary {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--color-terracotta);
-    color: var(--color-terracotta);
-    font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    border-radius: 9999px;
-    transition: background-color 0.2s, color 0.2s;
+  .btn-filled {
+    background: var(--color-ink);
+    color: var(--color-paper);
   }
 
-  .btn-secondary:hover {
-    background-color: var(--color-terracotta);
-    color: var(--color-cream);
+  .btn-filled:hover {
+    background: var(--color-mid);
   }
 
-  .section-divider {
-    width: 4rem;
-    height: 1px;
-    background-color: var(--color-terracotta);
-    margin: 3rem auto;
+  /* Duotone botanical image wrapper */
+  .botanical-wrapper {
+    background-color: var(--color-wash);
+    overflow: hidden;
+  }
+
+  .botanical-img {
+    filter: grayscale(100%) contrast(1.1);
+    mix-blend-mode: multiply;
+    width: 100%;
+    display: block;
+  }
+
+  /* Botanical placeholder (until real photos arrive) */
+  .botanical-placeholder {
+    background-color: var(--color-wash);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botanical-placeholder::after {
+    content: attr(data-label);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    opacity: 0.6;
+  }
+
+  /* Section label */
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+  }
+
+  /* Fee tier card */
+  .fee-tier {
+    border-top: 0.5px solid var(--color-mid);
+    padding: 1.25rem 0;
+  }
+
+  /* Form elements — serif, consistent palette */
+  input, textarea, select {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-ink);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-mid);
+    border-radius: 0;
+    width: 100%;
+    padding: 0.5rem 0;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  input:focus, textarea:focus {
+    border-bottom-color: var(--color-ink);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--color-stone);
+    opacity: 0.6;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    display: block;
+    margin-bottom: 0.25rem;
   }
 }

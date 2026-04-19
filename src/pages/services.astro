@@ -8,77 +8,191 @@ const services = [
     title: 'Individual Therapy',
     description: 'One-on-one sessions drawing on EMDR, somatic experiencing, DBT, and psychodynamic approaches — tailored to your history, your nervous system, and your goals.',
     modalities: 'EMDR · Somatic Experiencing · DBT · Psychodynamic',
-    duration: '60 minutes',
+    duration: '60 min',
     rate: '$70 – $150',
   },
   {
     title: 'Group Therapy',
-    description: 'Small-group therapeutic work offering peer connection alongside clinical support. Group formats vary — reach out to ask about current offerings.',
+    description: 'Small-group therapeutic work offering peer connection alongside clinical support. Reach out to ask about current group offerings and availability.',
     modalities: 'Format varies by group',
-    duration: '60 minutes',
+    duration: '60 min',
     rate: '$90 – $200',
   },
   {
     title: 'Spiritual Care & Counseling',
     description: 'For clients navigating questions of meaning, faith, religious trauma, or spiritual transition alongside psychological healing.',
     modalities: 'Integrative · Spiritually-informed',
-    duration: '60 minutes',
-    rate: 'Sliding scale — see below',
+    duration: '60 min',
+    rate: 'Sliding scale',
   },
 ];
 ---
 
 <Layout
   title="Services & Rates"
-  description="Individual therapy, group therapy, and spiritual care on a sliding scale. River uses the Green Bottle Pay Scale."
+  description="Individual therapy, group therapy, and spiritual care on a sliding scale. River Williams Psychotherapy, Philadelphia PA."
 >
-  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16">
-    <header class="mb-10">
-      <p class="font-sans text-muted text-sm tracking-widest uppercase mb-3">What's offered</p>
-      <h1 class="font-serif text-forest text-4xl md:text-5xl font-medium mb-5">Services &amp; Rates</h1>
-      <p class="font-sans text-slate text-base leading-relaxed max-w-2xl">
-        River offers individual and group therapy on a sliding scale, using the Green Bottle Pay Scale.
-      </p>
-    </header>
 
-    <!-- Green Bottle Pay Scale callout -->
-    <!-- PLACEHOLDER: Update with any additional context River wants to provide about the sliding scale — who it's for, how clients should think about choosing their rate -->
-    <div class="bg-sand border-l-4 border-terracotta rounded-r-2xl p-7 mb-14 max-w-3xl">
-      <h2 class="font-serif text-forest text-xl font-medium mb-3">The Green Bottle Pay Scale</h2>
-      <p class="font-sans text-slate text-sm leading-relaxed">
-        River uses the Green Bottle Pay Scale, a community-accountable sliding scale model.
-        Clients are invited to self-select a rate that reflects their access to financial
-        resources. No documentation required. The goal is for cost to be a smaller barrier
-        to care — for everyone.
+  <div class="max-w-6xl mx-auto px-6 md:px-10 pt-14 pb-6">
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem;" class="services-header">
+      <div>
+        <p class="section-label" style="margin-bottom: 1rem;">What's offered</p>
+        <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; font-style: italic; line-height: 1.1; color: var(--color-ink);">
+          Services<br />&amp; Rates
+        </h1>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 1rem; line-height: 1.8; color: var(--color-stone);">
+        River offers individual and group therapy on a sliding scale, using the Green Bottle Pay Scale. Clients are invited to self-select a rate that reflects their access to financial resources — no documentation required.
       </p>
     </div>
 
-    <!-- Service cards -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-      {services.map(service => (
+    <div class="rule"></div>
+
+    <!-- Service list -->
+    <div style="margin: 0 0 4rem;">
+      {services.map(s => (
         <ServiceCard
-          title={service.title}
-          description={service.description}
-          modalities={service.modalities}
-          duration={service.duration}
-          rate={service.rate}
+          title={s.title}
+          description={s.description}
+          modalities={s.modalities}
+          duration={s.duration}
+          rate={s.rate}
         />
       ))}
+      <!-- Closing rule -->
+      <div class="rule"></div>
     </div>
 
-    <!-- Insurance / payment note -->
-    <!-- PLACEHOLDER: Update with River's actual insurance/payment acceptance policy -->
-    <div class="max-w-2xl text-sm font-sans text-slate leading-relaxed space-y-2">
-      <p><strong class="font-medium text-forest">Insurance:</strong> [Placeholder — update with whether River accepts insurance, is out-of-network only, or can provide superbills for reimbursement]</p>
-      <p><strong class="font-medium text-forest">Payment:</strong> [Placeholder — accepted payment methods]</p>
-      <p><strong class="font-medium text-forest">Cancellation:</strong> [Placeholder — cancellation policy]</p>
-    </div>
   </div>
+
+  <!-- Fee tiers + green bottle -->
+  <section style="background: var(--color-wash); padding: 5rem 0;">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;" class="fees-grid">
+
+        <!-- Left: explanation + tiers -->
+        <div>
+          <p class="section-label" style="margin-bottom: 1.25rem;">Sliding scale — Green Bottle model</p>
+          <h2 style="font-family: var(--font-display); font-size: 2rem; font-weight: 400; font-style: italic; color: var(--color-ink); margin-bottom: 1.5rem; line-height: 1.2;">
+            Choose the rate<br />that fits your life.
+          </h2>
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.8; color: var(--color-ink); margin-bottom: 2.5rem;">
+            The Green Bottle Pay Scale is a community-accountable sliding scale model. You self-select a rate based on your access to financial resources. There is no means-testing or documentation required — your self-assessment is trusted.
+          </p>
+
+          <!-- Three tiers -->
+          <div>
+            {[
+              { range: '$130 – $150', label: 'Full rate', desc: 'You have financial stability, savings, and can meet your needs without worry.' },
+              { range: '$100 – $120', label: 'Reduced rate', desc: 'You manage your expenses but have limited savings or financial cushion.' },
+              { range: '$70 – $90',  label: 'Community rate', desc: 'You experience financial hardship, instability, or are in survival mode.' },
+            ].map(tier => (
+              <div class="fee-tier" style="border-top-color: var(--color-ink);">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem;">
+                  <span style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-ink);">{tier.range}</span>
+                  <span class="section-label">{tier.label}</span>
+                </div>
+                <p style="font-family: var(--font-body); font-size: 0.85rem; color: var(--color-stone); line-height: 1.6;">{tier.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: green bottle SVG illustration -->
+        <div style="display: flex; flex-direction: column; align-items: center; padding-top: 1rem;">
+          <svg viewBox="0 0 200 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 260px;" aria-label="Green Bottle Pay Scale — three-tier sliding scale visualization">
+            <!-- Bottle neck -->
+            <rect x="82" y="10" width="36" height="8" rx="2" fill="none" stroke="#1a3a2a" stroke-width="1.5"/>
+            <!-- Bottle neck lower -->
+            <rect x="74" y="18" width="52" height="22" rx="2" fill="none" stroke="#1a3a2a" stroke-width="1.5"/>
+            <!-- Shoulder curve path -->
+            <path d="M74 40 Q60 60 55 90 L55 280 Q55 295 100 295 Q145 295 145 280 L145 90 Q140 60 126 40 Z"
+              fill="#c8dfc8" stroke="#1a3a2a" stroke-width="1.5"/>
+
+            <!-- Tier 3: community (bottom) -->
+            <clipPath id="bottle-clip">
+              <path d="M74 40 Q60 60 55 90 L55 280 Q55 295 100 295 Q145 295 145 280 L145 90 Q140 60 126 40 Z"/>
+            </clipPath>
+            <!-- Bottom fill: community tier -->
+            <rect x="55" y="210" width="90" height="85" fill="#2d6644" opacity="0.25" clip-path="url(#bottle-clip)"/>
+            <!-- Middle fill: reduced tier -->
+            <rect x="55" y="150" width="90" height="60" fill="#2d6644" opacity="0.45" clip-path="url(#bottle-clip)"/>
+            <!-- Top fill: full tier -->
+            <rect x="55" y="90" width="90" height="60" fill="#2d6644" opacity="0.7" clip-path="url(#bottle-clip)"/>
+
+            <!-- Dividing lines -->
+            <line x1="58" y1="210" x2="142" y2="210" stroke="#1a3a2a" stroke-width="0.75" stroke-dasharray="3,2" opacity="0.5"/>
+            <line x1="58" y1="150" x2="142" y2="150" stroke="#1a3a2a" stroke-width="0.75" stroke-dasharray="3,2" opacity="0.5"/>
+
+            <!-- Labels inside bottle -->
+            <text x="100" y="128" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1a3a2a" font-style="italic">$130–150</text>
+            <text x="100" y="185" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1a3a2a" font-style="italic">$100–120</text>
+            <text x="100" y="252" text-anchor="middle" font-family="EB Garamond, serif" font-size="10" fill="#1a3a2a" font-style="italic">$70–90</text>
+          </svg>
+          <p style="font-family: var(--font-body); font-size: 0.78rem; text-align: center; color: var(--color-stone); margin-top: 1.25rem; max-width: 220px; line-height: 1.6;">
+            The Green Bottle Pay Scale — a community-accountable model for equitable access to care.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance, payment, cancellation -->
+  <section style="padding: 4rem 0;">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;" class="policy-grid">
+
+        <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem 2rem 2rem 0;">
+          <p class="section-label" style="margin-bottom: 0.75rem;">Insurance</p>
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-ink);">
+            Currently out-of-network. Accepts VCAP.
+            <!-- PLACEHOLDER: Confirm "VCAP" acronym and full program name with River before publishing -->
+            Superbills provided upon request so clients can submit for out-of-network reimbursement independently.
+          </p>
+        </div>
+
+        <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem; border-left: 0.5px solid var(--color-mid);">
+          <p class="section-label" style="margin-bottom: 0.75rem;">Payment</p>
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-ink);">
+            <!-- PLACEHOLDER: Add accepted payment methods (credit card, HSA/FSA, etc.) -->
+            Payment is due at time of service. Accepted methods: [payment methods — update with River].
+          </p>
+        </div>
+
+        <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem 0 2rem 2rem; border-left: 0.5px solid var(--color-mid);">
+          <p class="section-label" style="margin-bottom: 0.75rem;">Cancellation</p>
+          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-ink);">
+            50% of the session fee is charged for cancellations made with less than 24 hours notice.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
   <CTABlock
     heading="Ready to get started?"
-    body="Reach out with questions, or use the booking portal to schedule a consultation."
-    primaryLabel="Get in touch"
+    body="Schedule a free 20-minute consultation to ask questions and see if we're a good fit."
+    primaryLabel="Book Free Consultation"
     primaryHref="/contact"
   />
+
 </Layout>
+
+<style>
+  @media (max-width: 700px) {
+    .services-header, .fees-grid, .policy-grid {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    .policy-grid > * {
+      padding: 1.5rem 0 !important;
+      border-left: none !important;
+    }
+  }
+</style>

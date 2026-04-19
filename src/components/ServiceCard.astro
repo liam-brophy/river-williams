@@ -10,22 +10,39 @@ interface Props {
 const { title, modalities, duration, rate, description } = Astro.props;
 ---
 
-<div class="bg-cream border border-sand rounded-2xl p-8 flex flex-col gap-4 hover:shadow-md transition-shadow duration-200">
-  <h3 class="font-serif text-forest text-2xl font-medium">{title}</h3>
-  {description && (
-    <p class="font-sans text-slate text-sm leading-relaxed">{description}</p>
-  )}
-  {modalities && (
-    <p class="font-sans text-muted text-xs tracking-wide uppercase">{modalities}</p>
-  )}
-  <div class="flex flex-wrap gap-6 mt-2 border-t border-sand pt-4">
+<div style="border-top: 0.5px solid var(--color-mid); padding: 2rem 0;">
+  <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; align-items: start;" class="card-grid">
+
     <div>
-      <p class="font-sans text-xs text-muted uppercase tracking-wide mb-1">Duration</p>
-      <p class="font-serif text-forest text-base font-medium">{duration}</p>
+      <h3 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; color: var(--color-ink); margin-bottom: 0.6rem;">
+        {title}
+      </h3>
+      {description && (
+        <p style="font-family: var(--font-body); font-size: 0.9rem; line-height: 1.7; color: var(--color-stone);">{description}</p>
+      )}
+      {modalities && (
+        <p class="section-label" style="margin-top: 0.75rem;">{modalities}</p>
+      )}
     </div>
+
     <div>
-      <p class="font-sans text-xs text-muted uppercase tracking-wide mb-1">Rate</p>
-      <p class="font-serif text-forest text-base font-medium">{rate}</p>
+      <p class="section-label" style="margin-bottom: 0.3rem;">Duration</p>
+      <p style="font-family: var(--font-display); font-size: 1rem; color: var(--color-ink);">{duration}</p>
     </div>
+
+    <div>
+      <p class="section-label" style="margin-bottom: 0.3rem;">Rate</p>
+      <p style="font-family: var(--font-display); font-size: 1rem; color: var(--color-ink);">{rate}</p>
+    </div>
+
   </div>
 </div>
+
+<style>
+  @media (max-width: 600px) {
+    .card-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+  }
+</style>

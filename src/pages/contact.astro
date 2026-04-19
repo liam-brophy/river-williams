@@ -4,116 +4,127 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Contact"
-  description="Reach out to River Williams Psychotherapy to ask questions or schedule a consultation."
+  description="Get in touch with River Williams Psychotherapy. Book a free 20-minute consultation or send a message."
 >
-  <div class="max-w-4xl mx-auto px-6 md:px-12 py-16">
-    <header class="mb-12">
-      <p class="font-sans text-muted text-sm tracking-widest uppercase mb-3">Reach out</p>
-      <h1 class="font-serif text-forest text-4xl md:text-5xl font-medium mb-5">Get in Touch</h1>
-      <p class="font-sans text-slate text-base leading-relaxed max-w-xl">
-        Reach out to ask questions, inquire about availability, or schedule a free consultation.
-        All messages are responded to within 2–3 business days.
-      </p>
-    </header>
 
-    <div class="grid md:grid-cols-2 gap-14">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 pt-14">
+
+    <!-- Header -->
+    <div style="margin-bottom: 3.5rem;">
+      <p class="section-label" style="margin-bottom: 1rem;">Reach out</p>
+      <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; font-style: italic; color: var(--color-ink); line-height: 1.1; margin-bottom: 1.25rem;">
+        Get in Touch
+      </h1>
+      <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); line-height: 1.75; max-width: 52ch;">
+        Reach out to ask questions, inquire about availability, or schedule a free 20-minute consultation. All messages are responded to within 2–3 business days.
+      </p>
+    </div>
+
+    <div class="rule" style="margin-bottom: 3.5rem;"></div>
+
+    <!-- Two-column: form + direct contact / booking -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; padding-bottom: 6rem;" class="contact-grid">
 
       <!-- Contact form -->
-      <!-- PLACEHOLDER: Confirm Netlify form is wired up correctly after first deploy — test submission in Netlify dashboard -->
       <div>
-        <h2 class="font-serif text-forest text-2xl font-medium mb-6">Send a message</h2>
+        <p style="font-family: var(--font-display); font-size: 1.4rem; font-style: italic; color: var(--color-ink); margin-bottom: 2.5rem;">
+          Send a message
+        </p>
 
+        <!-- PLACEHOLDER: Confirm Netlify Forms are live after first deploy — test via Netlify dashboard under Forms tab -->
         <form
           name="contact"
           method="POST"
           data-netlify="true"
           action="/thank-you"
-          class="space-y-6"
+          style="display: flex; flex-direction: column; gap: 2.5rem;"
         >
           <input type="hidden" name="form-name" value="contact" />
 
           <div>
-            <label for="name" class="block font-sans text-sm font-medium text-forest mb-2">
-              Full name <span class="text-terracotta">*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full px-4 py-3 bg-white border border-sand rounded-xl font-sans text-sm text-slate focus:outline-none focus:border-forest transition-colors"
-              placeholder="Your name"
-            />
+            <label for="name">Full name <span style="color: var(--color-mid);">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
           </div>
 
           <div>
-            <label for="email" class="block font-sans text-sm font-medium text-forest mb-2">
-              Email address <span class="text-terracotta">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full px-4 py-3 bg-white border border-sand rounded-xl font-sans text-sm text-slate focus:outline-none focus:border-forest transition-colors"
-              placeholder="you@example.com"
-            />
+            <label for="email">Email address <span style="color: var(--color-mid);">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
           </div>
 
           <div>
-            <label for="message" class="block font-sans text-sm font-medium text-forest mb-2">
-              Message <span class="text-terracotta">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="6"
-              class="w-full px-4 py-3 bg-white border border-sand rounded-xl font-sans text-sm text-slate focus:outline-none focus:border-forest transition-colors resize-none"
-              placeholder="What brings you here? Feel free to share as much or as little as you'd like."
-            ></textarea>
+            <label for="message">Message <span style="color: var(--color-mid);">*</span></label>
+            <textarea id="message" name="message" required rows="6" placeholder="What brings you here? Feel free to share as much or as little as you'd like."></textarea>
           </div>
 
-          <button
-            type="submit"
-            class="w-full py-3 bg-forest text-cream font-sans font-medium text-sm tracking-wide rounded-full transition-all duration-200 hover:bg-opacity-90"
-          >
-            Send message
-          </button>
+          <div>
+            <button type="submit" class="btn btn-filled" style="font-size: 0.75rem; width: 100%; justify-content: center; display: block; text-align: center; padding: 0.85rem 1.5rem;">
+              Send message
+            </button>
+            <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 0.85rem; line-height: 1.6;">
+              Please do not include health or clinical information in this form. For crisis support, call or text 988.
+            </p>
+          </div>
 
-          <p class="font-sans text-xs text-muted leading-relaxed">
-            This form does not collect health or clinical information. Please do not include
-            details about your mental health history in this message.
-          </p>
         </form>
       </div>
 
-      <!-- SimplePractice widget + direct info -->
-      <div>
-        <h2 class="font-serif text-forest text-2xl font-medium mb-4">Schedule directly</h2>
-        <p class="font-sans text-slate text-sm leading-relaxed mb-8">
-          Existing clients and new inquiries can use the booking portal below to view availability
-          and request appointments.
-        </p>
+      <!-- Right: direct contact + SimplePractice -->
+      <div style="display: flex; flex-direction: column; gap: 3rem;">
 
-        <!-- PLACEHOLDER: Replace this comment block with the SimplePractice embed snippet when available -->
-        <!-- SimplePractice widget goes here — paste the <script> or <iframe> snippet provided by SimplePractice -->
-        <div class="bg-sand rounded-2xl p-8 text-center">
-          <p class="font-serif text-forest text-lg mb-2">Booking portal</p>
-          <p class="font-sans text-sm text-muted">SimplePractice scheduling widget will appear here.</p>
-        </div>
-
-        <!-- PLACEHOLDER: Update with actual contact details -->
-        <div class="mt-8 space-y-3 font-sans text-sm text-slate">
-          <p><span class="font-medium text-forest">Email:</span> hello@riverwilliamstherapy.com</p>
-          <p><span class="font-medium text-forest">Phone:</span> (000) 000-0000</p>
-          <p class="text-xs text-muted leading-relaxed pt-2">
-            Phone and email are not monitored in real time. Please do not use these for crisis
-            situations — if you are in crisis, call or text 988 or go to your nearest emergency room.
+        <!-- Direct contact -->
+        <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+          <p class="section-label" style="margin-bottom: 1.25rem;">Direct contact</p>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <a href="tel:4848419201" style="font-family: var(--font-display); font-size: 1.15rem; color: var(--color-ink);">
+              (484) 841-9201
+            </a>
+            <a href="mailto:Riverwilliamspsychotherapy@proton.me" style="font-family: var(--font-body); font-size: 0.9rem; color: var(--color-stone); text-decoration: underline; text-underline-offset: 3px; word-break: break-all;">
+              Riverwilliamspsychotherapy@proton.me
+            </a>
+          </div>
+          <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 1rem; line-height: 1.6; opacity: 0.8;">
+            Phone and email are not monitored in real time.
           </p>
         </div>
+
+        <!-- Free consultation note -->
+        <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+          <p class="section-label" style="margin-bottom: 0.75rem;">Free consultation</p>
+          <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--color-ink); line-height: 1.75;">
+            River offers a free 20-minute phone or video consultation for new clients — no commitment required. Use the form or booking portal to request one.
+          </p>
+        </div>
+
+        <!-- SimplePractice booking widget -->
+        <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+          <p class="section-label" style="margin-bottom: 0.75rem;">Schedule directly</p>
+          <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--color-stone); line-height: 1.7; margin-bottom: 1.5rem;">
+            Existing clients and new inquiries can use the booking portal to view availability and request appointments.
+          </p>
+
+          <!-- PLACEHOLDER: Paste SimplePractice public booking URL here once River provides it -->
+          <!-- Request: ask River for the public-facing booking URL from SimplePractice (no account access needed) -->
+          <!-- Once received, replace this block with either: -->
+          <!--   <a href="[SP_URL]" class="btn" target="_blank" rel="noopener">Open booking portal</a> -->
+          <!--   or embed the SimplePractice <script> widget snippet directly below -->
+          <div style="border: 0.5px solid var(--color-mid); padding: 2rem; text-align: center;">
+            <p style="font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--color-stone);">Booking portal</p>
+            <p style="font-family: var(--font-body); font-size: 0.78rem; color: var(--color-stone); margin-top: 0.4rem; opacity: 0.7;">SimplePractice widget — awaiting URL from River</p>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
+
 </Layout>
+
+<style>
+  @media (max-width: 700px) {
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+      gap: 3rem !important;
+    }
+  }
+</style>
