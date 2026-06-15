@@ -17,22 +17,20 @@ import Flower from '../components/icons/Flower.astro';
 
         <!-- Left: page title -->
         <div style="padding: 4rem 3rem 4rem 0; border-right: 0.5px solid var(--color-mid); display: flex; flex-direction: column; justify-content: flex-end;">
-          <p class="section-label" style="margin-bottom: 1rem;">About</p>
           <h1 style="font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 700; font-style: normal; color: var(--color-ink); line-height: 1.05;">
             About River
           </h1>
           <p style="font-family: var(--font-body); font-size: 1rem; color: var(--color-stone); margin-top: 1.5rem; line-height: 1.75; max-width: 38ch;">
-            Philadelphia-based LCSW specializing in somatic, EMDR, and trauma-focused psychotherapy.
+            Philadelphia-based therapist specializing in somatic, EMDR, and trauma-focused psychotherapy.
           </p>
         </div>
 
-        <!-- Right: headshot — duotone via CSS -->
-        <div class="botanical-wrapper" style="max-height: 480px;">
+        <!-- Right: headshot — no duotone -->
+        <div style="max-height: 480px; overflow: hidden;">
           <img
             src="/images/river-headshot.png"
-            alt="River Williams, LCSW"
-            class="botanical-img"
-            style="object-fit: cover; object-position: center top; max-height: 480px;"
+            alt="River Williams"
+            style="width: 100%; object-fit: cover; object-position: center top; max-height: 480px; display: block;"
           />
         </div>
 
@@ -49,27 +47,29 @@ import Flower from '../components/icons/Flower.astro';
         <div style="display: flex; flex-direction: column; gap: 1.6rem; font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; color: var(--color-stone);">
 
           <p>
-            My work is rooted in somatic trauma specialization, curiosity, and trust in each person's innate wisdom. I emphasize creating internal safety and flexibility rather than pushing for change, allowing healing to unfold at a pace the body and internal world can sustain.
+            My work draws from trainings and practice using Somatic Experiencing, Internal Family Systems (IFS), attachment-focused EMDR, DBT, Psycho-dynamic therapy, and Mindfulness-based practices. I have also received mentorship in spiritual care, ancestral connection, and ritual work. These approaches support me in the work I do tending to trauma, chronic overwhelm, attachment wounds, and nervous system dysregulation, while building greater emotional flexibility, self-trust, and internal trust. Sessions are collaborative and slowly paced, guided by consent and close attention to the rhythms of the nervous system. While also being direct and sometimes uncomfortable.
           </p>
 
           <p>
-            I am trained in DBT, Internal Family Systems, Psychodynamics, Attachment-Focused EMDR, Mindfulness-Based Stress Reduction, and Somatic Experiencing. I draw additional grounding from spiritual care and counseling, ancestral connection, and ritual. These modalities support clients in processing trauma, working with protective and wounded parts, and developing greater emotional regulation and resilience. Sessions are collaborative, attuned, and paced with careful attention to consent and the nervous system.
+            For over a decade, I have studied and practiced mindfulness and meditation within Zen Buddhist traditions and am trained as a Kripalu 200-hour yoga teacher. My path into counseling has been shaped not only by professional training, but by lived experience, persistence, and a deep commitment to embodied healing by connecting to the greater world around me. This work is offered with steadiness, warmth, and reverence for the complexity and clumsiness of being human and living in a body in this world.
           </p>
 
-          <p>
-            For over ten years I have lived, studied, and practiced mindfulness and Buddhist traditions, and am trained as a Kripalu 200-hour Yoga teacher. This embodied foundation informs a steady, compassionate therapeutic presence — supporting clients in reconnecting with their bodies, cultivating internal trust, and creating meaningful, lasting change.
-          </p>
+          <div style="margin-top: 0.5rem; padding-top: 1.5rem; border-top: 0.5px solid var(--color-mid);">
+            <p class="section-label" style="margin-bottom: 1rem;">My Identities</p>
+            <p>
+              I work to understand my identities and my access points within the world I live in as a queer, white, nonbinary, able-bodied person. I also reflect on the repercussions of my ancestors' actions and the ways I benefit from harms that have been done, both intentionally and unintentionally.
+            </p>
+          </div>
 
         </div>
 
-        <!-- Lemon balm botanical — secondary image, duotone via CSS -->
+        <!-- Lemon balm botanical -->
         <div style="margin-top: 3.5rem; border-top: 0.5px solid var(--color-mid); padding-top: 2rem;">
-          <div class="botanical-wrapper">
+          <div style="overflow: hidden;">
             <img
               src="/images/lemon-balm.avif"
               alt="Lemon balm"
-              class="botanical-img"
-              style="max-height: 320px; object-fit: cover;"
+              style="width: 100%; max-height: 320px; object-fit: cover; display: block;"
             />
           </div>
         </div>
@@ -104,12 +104,26 @@ import Flower from '../components/icons/Flower.astro';
             </ul>
           </div>
 
-          <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+          <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem; margin-bottom: 2.5rem;">
             <p class="section-label" style="margin-bottom: 0.5rem;">Licensure</p>
             <p style="font-family: var(--font-body); font-size: 0.88rem; color: var(--color-stone); line-height: 1.6;">
               Pennsylvania LCSW<br />
               License #CW026881
             </p>
+          </div>
+
+          <div style="border-top: 0.5px solid var(--color-mid); padding-top: 1.5rem;">
+            <p class="section-label" style="margin-bottom: 1rem;">Education</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem; list-style: none; padding: 0; margin: 0;">
+              <li style="font-family: var(--font-body); font-size: 0.88rem; color: var(--color-stone); line-height: 1.55;">
+                MA in Clinical Social Work and Research<br />
+                <span style="opacity: 0.75;">Bryn Mawr College, 2023</span>
+              </li>
+              <li style="font-family: var(--font-body); font-size: 0.88rem; color: var(--color-stone); line-height: 1.55;">
+                BS in History and Anthropology<br />
+                <span style="opacity: 0.75;">Mass College of Liberal Arts, 2008</span>
+              </li>
+            </ul>
           </div>
 
         </div>

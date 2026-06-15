@@ -17,14 +17,14 @@ const services = [
     description: 'Small-group therapeutic work offering peer connection alongside clinical support. Reach out to ask about current group offerings and availability.',
     modalities: 'Format varies by group',
     duration: '60 min',
-    rate: '$90 – $200',
+    rate: '$30 – $60',
   },
   {
     title: 'Spiritual Care & Counseling',
-    description: 'For clients navigating questions of meaning, faith, religious trauma, or spiritual transition alongside psychological healing.',
+    description: 'For clients navigating existential questions, spiritual transitions, and healing from religious distress and trauma.',
     modalities: 'Integrative · Spiritually-informed',
     duration: '60 min',
-    rate: 'Sliding scale',
+    rate: '$70 – $150',
   },
 ];
 
@@ -102,7 +102,7 @@ const tiers = [
         </h1>
       </div>
       <p style="font-family: var(--font-body); font-size: 1rem; line-height: 1.8; color: var(--color-stone);">
-        River offers individual and group therapy on a sliding scale, using the Green Bottle Pay Scale. Clients are invited to self-select a rate that reflects their access to financial resources — no documentation required.
+        River offers individual and group therapy on a sliding scale, using the Green Bottle Pay Scale. Clients are invited to self-select a rate that reflects their access to financial resources.
       </p>
     </div>
 
@@ -125,7 +125,7 @@ const tiers = [
   </div>
 
   <!-- Interactive Green Bottle Pay Scale -->
-  <section style="background: var(--color-wash); padding: 5rem 0;">
+  <section style="background: linear-gradient(135deg, var(--color-wash) 0%, #e8dff0 100%); padding: 5rem 0;">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
 
       <div style="text-align: center; margin-bottom: 3.5rem;">
@@ -257,10 +257,11 @@ const tiers = [
 
         <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem 2rem 2rem 0;">
           <p class="section-label" style="margin-bottom: 0.75rem;">Insurance</p>
-          <p style="font-family: var(--font-body); font-size: 0.95rem; line-height: 1.75; color: var(--color-stone);">
-            Currently out-of-network. Accepts VCAP.
-            Superbills provided upon request so clients can submit for out-of-network reimbursement independently.
-          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="display: flex; align-items: flex-start; gap: 0.5rem; font-family: var(--font-body); font-size: 0.95rem; line-height: 1.7; color: var(--color-stone);"><span style="color: var(--color-mid); flex-shrink: 0;">—</span> Currently out-of-network</li>
+            <li style="display: flex; align-items: flex-start; gap: 0.5rem; font-family: var(--font-body); font-size: 0.95rem; line-height: 1.7; color: var(--color-stone);"><span style="color: var(--color-mid); flex-shrink: 0;">—</span> Accepts VCAP</li>
+            <li style="display: flex; align-items: flex-start; gap: 0.5rem; font-family: var(--font-body); font-size: 0.95rem; line-height: 1.7; color: var(--color-stone);"><span style="color: var(--color-mid); flex-shrink: 0;">—</span> Superbills provided upon request for out-of-network reimbursement</li>
+          </ul>
         </div>
 
         <div style="border-top: 0.5px solid var(--color-mid); padding: 2rem; border-left: 0.5px solid var(--color-mid);">

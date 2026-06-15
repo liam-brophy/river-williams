@@ -3,12 +3,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color system — all green */
+  /* Color system — green + passionflower purple */
   --color-ink:    #1a3a2a;   /* near-black green — headings, borders */
   --color-mid:    #2d6644;   /* mid green — accents, borders, rules */
-  --color-wash:   #c8dfc8;   /* light green — duotone bg, tints */
-  --color-paper:  #f5f0e8;   /* warm off-white — page background */
+  --color-wash:   #d4dce8;   /* soft lavender-green — section tints */
+  --color-paper:  #f5f0eb;   /* warm off-white — page background */
   --color-stone:  #3a6a50;   /* friendly green — body text, labels */
+  --color-plum:   #6b4c7a;   /* passionflower purple — accent */
 
   /* Typography — all serif */
   --font-display: 'Instrument Serif', Georgia, serif;
@@ -98,7 +99,7 @@
 
   /* Duotone botanical image wrapper — screen blend: dark areas → color, bright areas → white */
   .botanical-wrapper {
-    background: linear-gradient(160deg, #3aab7a 0%, #4ab8c8 100%);
+    background: linear-gradient(160deg, #3aab7a 0%, #7b5fa0 60%, #4ab8c8 100%);
     overflow: hidden;
   }
 
